@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 214 55% 33%;  /* #1A4D8C primary blue */
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 43% 45%; /* #3170B5 secondary blue */
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --accent: 27 100% 56%;  /* #FF7E1F orange accent */
+  --accent-foreground: 0 0% 100%;  /* white text on accent */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 214 55% 33%;  /* primary blue for focus rings */
+  --radius: 0.5rem;
+  
+  /* Additional custom colors */
+  --neutral-dark: 0 0% 20%; /* #333333 */
+  --neutral-light: 210 30% 97%; /* #F5F8FB */
+  --success: 142 50% 40%; /* #28A745 */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 214 55% 33%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 210 43% 45%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 27 100% 56%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-neutral-light text-neutral-dark font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+
+  .container {
+    @apply px-4 mx-auto;
+  }
+}
+
+/* Custom classes */
+@layer components {
+  .hero-gradient {
+    @apply bg-gradient-to-r from-primary/80 to-black/50;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-md transition duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-100 text-primary font-medium py-3 px-6 rounded-md transition duration-200;
+  }
+  
+  .btn-accent {
+    @apply bg-accent hover:bg-accent/90 text-white font-medium py-3 px-6 rounded-md transition duration-200;
+  }
+  
+  .btn-outline {
+    @apply bg-white border-2 border-primary hover:bg-primary hover:text-white text-primary font-medium py-3 px-6 rounded-md transition duration-200;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-heading font-bold mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-600 max-w-2xl mx-auto;
+  }
+  
+  .feature-icon {
+    @apply w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary text-2xl;
+  }
+  
+  .contact-icon {
+    @apply w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 text-primary;
+  }
+  
+  .social-icon {
+    @apply w-10 h-10 bg-primary hover:bg-accent text-white rounded-full flex items-center justify-center transition duration-200;
+  }
+}
+
+/* Font families */
+@layer base {
+  :root {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --font-accent: 'Nunito Sans', sans-serif;
+  }
+  
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  
+  .font-body {
+    font-family: var(--font-body);
+  }
+  
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+}

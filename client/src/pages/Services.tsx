@@ -1,0 +1,207 @@
+import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { services } from "@/lib/constants";
+
+const Services = () => {
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  return (
+    <>
+      {/* Services Hero */}
+      <section className="py-20 bg-primary">
+        <div className="container">
+          <motion.div 
+            className="text-center max-w-3xl mx-auto"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">Our Automotive Services</h1>
+            <p className="text-xl text-white/80 mb-8">
+              Comprehensive automotive repair and maintenance services performed by experienced mechanics
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Listing */}
+      <section className="py-16 bg-neutral-light">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <motion.div 
+                key={service.id}
+                id={service.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-heading font-semibold mb-2">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <ul className="mb-6 space-y-2">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-start">
+                        <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Service Information */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Quality Service Guarantees</h2>
+                <p className="text-gray-600 mb-4">
+                  At Bakemono J Garage Workshop, we stand behind our work with confidence. Our team of certified mechanics brings years of experience and technical expertise to every job, ensuring your vehicle receives the highest quality care.
+                </p>
+                <p className="text-gray-600 mb-6">
+                  We use only quality parts and the latest diagnostic equipment to deliver accurate repairs and maintenance services. Our commitment to excellence has earned us recognition as one of Malaysia's top mechanics.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-start">
+                    <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
+                    <span>30-day service guarantee</span>
+                  </div>
+                  <div className="flex items-start">
+                    <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
+                    <span>Transparent pricing</span>
+                  </div>
+                  <div className="flex items-start">
+                    <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
+                    <span>Quality parts used</span>
+                  </div>
+                  <div className="flex items-start">
+                    <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
+                    <span>Professional technicians</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                <Link href="/contact" className="btn-primary inline-flex items-center justify-center">
+                  Book a Service Now
+                </Link>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="rounded-lg overflow-hidden shadow-lg"
+            >
+              <img 
+                src="https://pixabay.com/get/g31165fb4f77e7a1fae61a565915094f59feb806a619c95903cd59630025acd82244eb96b76c84dedb1549f714522c16ea02b150a4372e8923f2a1fe015d2ce19_1280.jpg" 
+                alt="Professional Mechanics at Work" 
+                className="w-full h-auto"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-neutral-light">
+        <div className="container">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="section-title">Frequently Asked Questions</h2>
+            <p className="section-subtitle">
+              Get answers to common questions about our automotive services
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-4">
+              {[
+                {
+                  question: "How often should I change my oil?",
+                  answer: "For most vehicles, we recommend changing your oil every 5,000 to 7,500 kilometers or every 6 months, whichever comes first. However, this may vary based on your vehicle type, age, and driving conditions."
+                },
+                {
+                  question: "Do you work on all vehicle makes and models?",
+                  answer: "Yes, our technicians are experienced with most makes and models, including domestic, imported, and vintage vehicles. We have specialized expertise in both modern vehicles and classic car restoration."
+                },
+                {
+                  question: "How do I know if my transmission needs service?",
+                  answer: "Signs that your transmission may need service include: difficulty shifting gears, unusual noises when in neutral, leaking fluid, grinding or shaking during gear shifts, and warning lights on your dashboard."
+                },
+                {
+                  question: "Do you provide warranty on repairs?",
+                  answer: "Yes, we stand behind our work with a 30-day service guarantee on all repairs. Some parts may also carry their own manufacturer warranties, which we'll explain at the time of service."
+                },
+                {
+                  question: "How do I schedule an appointment?",
+                  answer: "You can schedule an appointment by calling us, using our WhatsApp booking service, or filling out the contact form on our website. We'll confirm your appointment and provide any necessary preparation instructions."
+                }
+              ].map((faq, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-white rounded-lg shadow-md overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="p-6">
+                    <h3 className="text-lg font-heading font-semibold mb-2">{faq.question}</h3>
+                    <p className="text-gray-600">{faq.answer}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary">
+        <div className="container text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Ready to Book Your Service?</h2>
+            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+              Contact us today to schedule an appointment with our experienced mechanics.
+            </p>
+            <Link href="/contact" className="btn-accent inline-flex items-center justify-center">
+              <i className="fas fa-calendar-alt mr-2"></i> Book Appointment
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Services;
