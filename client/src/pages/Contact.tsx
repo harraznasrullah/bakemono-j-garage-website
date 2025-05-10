@@ -181,7 +181,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp Booking
+                  <i className="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp Booking: {contactInfo.phone}
                 </a>
               </motion.div>
             </div>

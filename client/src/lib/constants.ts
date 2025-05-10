@@ -152,17 +152,17 @@ export const features = [
 // Contact information
 export const contactInfo = {
   address: "Lot 5624/2, Jalan Bakti, Batu 3, Jalan Shahpadu Off Jalan Kapar, 42100 Klang, Selangor, Malaysia",
-  phone: "(+60) XX-XXXX XXXX",
-  phoneNote: "Available on our website or Google Business Profile",
+  phone: "(+60) 017-295 2514",
+  phoneNote: "Call or WhatsApp for inquiries and appointments",
   hours: {
     hq: "9 AM – 6 PM (HQ)",
     shell: "10 AM – 6 PM (Shell Branch)",
     closed: "Closed on Fridays"
   },
   social: {
-    facebook: "#",
-    instagram: "#",
-    whatsapp: "#"
+    facebook: "https://www.facebook.com/BakemonoJGarage/",
+    instagram: "https://www.instagram.com/bakemonojgarageservice/",
+    whatsapp: "https://wa.me/60172952514"
   },
   mapLocation: "Lot 5624/2, Jalan Bakti, Klang, Selangor, Malaysia"
 };
