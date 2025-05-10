@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { contactInfo, serviceOptions } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Define the form schema
 const contactFormSchema = z.object({
@@ -26,6 +27,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
+  const { language, t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormValues>({
@@ -75,9 +77,14 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
+              {t('contact.hero.title')}
+            </h1>
             <p className="text-xl text-white/80 mb-8">
-              Get in touch with our team for any inquiries about our services
+              {language === 'en' 
+                ? 'Get in touch with our team for any inquiries about our services'
+                : 'Hubungi pasukan kami untuk sebarang pertanyaan tentang perkhidmatan kami'
+              }
             </p>
           </motion.div>
         </div>
@@ -94,7 +101,7 @@ const Contact = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-xl font-heading font-semibold mb-6">Contact Information</h3>
+                <h3 className="text-xl font-heading font-semibold mb-6">{t('contact.info.title')}</h3>
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -102,7 +109,7 @@ const Contact = () => {
                       <i className="fas fa-map-marker-alt"></i>
                     </div>
                     <div>
-                      <h4 className="font-medium">Address</h4>
+                      <h4 className="font-medium">{t('contact.address')}</h4>
                       <p className="text-gray-600">{contactInfo.address}</p>
                     </div>
                   </div>
@@ -112,9 +119,11 @@ const Contact = () => {
                       <i className="fas fa-phone"></i>
                     </div>
                     <div>
-                      <h4 className="font-medium">Phone</h4>
+                      <h4 className="font-medium">{t('contact.phone')}</h4>
                       <p className="text-gray-600">{contactInfo.phone}</p>
-                      <p className="text-sm text-gray-500">{contactInfo.phoneNote}</p>
+                      <p className="text-sm text-gray-500">
+                        {language === 'en' ? contactInfo.phoneNote : 'Hubungi atau WhatsApp untuk pertanyaan: 017-295 2514'}
+                      </p>
                     </div>
                   </div>
 
@@ -123,15 +132,17 @@ const Contact = () => {
                       <i className="far fa-clock"></i>
                     </div>
                     <div>
-                      <h4 className="font-medium">Business Hours</h4>
+                      <h4 className="font-medium">{t('contact.hours')}</h4>
                       <p className="text-gray-600">{contactInfo.hours.hq}</p>
-                      <p className="text-gray-600 font-medium">{contactInfo.hours.closed}</p>
+                      <p className="text-gray-600 font-medium">
+                        {language === 'en' ? contactInfo.hours.closed : 'Tutup: Ahad'}
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-8">
-                  <h4 className="font-medium mb-4">Connect With Us</h4>
+                  <h4 className="font-medium mb-4">{t('contact.connect')}</h4>
                   <div className="flex space-x-4">
                     <a 
                       href={contactInfo.social.facebook} 
@@ -179,7 +190,7 @@ const Contact = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
-                <h3 className="text-xl font-heading font-semibold mb-4">Business Hours</h3>
+                <h3 className="text-xl font-heading font-semibold mb-4">{t('contact.hours')}</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <i className="far fa-clock mr-3 text-accent"></i>
@@ -188,7 +199,7 @@ const Contact = () => {
 
                   <li className="flex items-center">
                     <i className="fas fa-calendar-times mr-3 text-accent"></i>
-                    <span>{contactInfo.hours.closed}</span>
+                    <span>{language === 'en' ? contactInfo.hours.closed : 'Tutup: Ahad'}</span>
                   </li>
                 </ul>
               </motion.div>
