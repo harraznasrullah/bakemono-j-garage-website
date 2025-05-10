@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { features, services, testimonials, galleryItems } from "@/lib/constants";
+import { features, services, testimonials, galleryItems, contactInfo } from "@/lib/constants";
 
 const Home = () => {
   // Animation variants
