@@ -302,17 +302,22 @@ const Contact = () => {
               </motion.div>
 
               <motion.div 
-                className="rounded-lg overflow-hidden shadow-md h-80"
+                className="rounded-lg overflow-hidden shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
                 <iframe 
-                  title="Bakemono J Garage Workshop Location"
-                  className="w-full h-full border-0"
-                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&q=${encodeURIComponent(contactInfo.mapLocation)}`}
+                  title="Bakemono J Garage Workshop Location" 
+                  className="w-full h-80 border-0"
+                  src={`https://www.openstreetmap.org/export/embed.html?bbox=101.4414%2C3.0418%2C101.4514%2C3.0518&layer=mapnik&marker=3.0468%2C101.4464`}
                   allowFullScreen
                 ></iframe>
+                <div className="text-center mt-2 text-sm text-gray-500">
+                  <a href="https://www.openstreetmap.org/?mlat=3.0468&mlon=101.4464" target="_blank" rel="noopener noreferrer">
+                    View larger map
+                  </a>
+                </div>
               </motion.div>
             </div>
           </div>
