@@ -1,63 +1,75 @@
 // Service categories
 export const services = [
   {
-    id: "oil_change",
-    title: "Oil Change Services",
-    description: "Regular oil changes help extend engine life and improve performance. We offer both minor and major service packages.",
+    id: "maintenance",
+    title: "Periodic Maintenance Service",
+    description: "Regular maintenance is essential for keeping your vehicle in optimal condition. Our comprehensive periodic service packages ensure your car runs smoothly and reliably.",
     image: "https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
     features: [
-      "Minor Service: Oil & filter change, fluid check",
-      "Major Service: Comprehensive fluid replacement"
+      "Oil and filter changes",
+      "Fluid level checks and top-ups",
+      "Multi-point inspection",
+      "Brake system check"
+    ]
+  },
+  {
+    id: "suspension",
+    title: "Suspension Checking",
+    description: "Our thorough suspension inspection ensures your vehicle handles properly and provides a comfortable ride while maintaining optimal tire wear.",
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    features: [
+      "Shock absorber inspection",
+      "Spring and strut assessment",
+      "Bushing and mount evaluation",
+      "Alignment check"
+    ]
+  },
+  {
+    id: "steering",
+    title: "Steering Checking",
+    description: "Precise steering is crucial for safety and handling. Our comprehensive steering checks identify any issues before they become serious problems.",
+    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    features: [
+      "Power steering system inspection",
+      "Steering rack and pinion check",
+      "Tie rod and end link evaluation",
+      "Steering fluid assessment"
+    ]
+  },
+  {
+    id: "inspection",
+    title: "Full Car Inspection",
+    description: "Our detailed vehicle inspection covers all major systems to ensure your car is safe, reliable, and performing at its best.",
+    image: "https://images.unsplash.com/photo-1613214450416-9d34fc57d6f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    features: [
+      "Engine and transmission inspection",
+      "Brake and suspension system check",
+      "Electrical system testing",
+      "Exhaust and emissions evaluation"
+    ]
+  },
+  {
+    id: "hybrid",
+    title: "Hybrid Car Repair",
+    description: "Our technicians are specially trained to diagnose and repair hybrid vehicles, handling both conventional and electric-specific components.",
+    image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    features: [
+      "Hybrid battery system diagnostics",
+      "Electric motor repair",
+      "Regenerative braking system service",
+      "Power management system troubleshooting"
     ]
   },
   {
     id: "diagnostics",
-    title: "Diagnostic Services",
-    description: "Advanced computer diagnostics to identify issues and provide accurate repairs for your vehicle.",
+    title: "Full Diagnostic, Wiring and Troubleshooting",
+    description: "Using advanced diagnostic equipment, we can identify and resolve complex electrical and mechanical issues in your vehicle.",
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
     features: [
-      "Computer scanning and troubleshooting",
-      "Hybrid vehicle diagnostics"
-    ]
-  },
-  {
-    id: "vintage_repairs",
-    title: "Vintage Car Repairs",
-    description: "Specialized restoration and maintenance services for classic and vintage vehicles.",
-    image: "https://pixabay.com/get/g7658ab49c6d9dc3de5644d3ae85c8a684254d7050d5f30ca9069811804ae6698a8e1114f2a395399ea6efba3dc5e1e8c0dea5cb7df4883c44a096ee697f0e1d6_1280.jpg",
-    features: [
-      "Classic car restoration and maintenance",
-      "Vintage parts sourcing and installation"
-    ]
-  },
-  {
-    id: "parts_supply",
-    title: "Parts Supply",
-    description: "Quality replacement parts including batteries, filters, and performance components.",
-    image: "https://images.unsplash.com/photo-1545156521-77bd85671d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    features: [
-      "Car batteries (Amaron Pro, Vasta Blue)",
-      "Genuine and OEM parts"
-    ]
-  },
-  {
-    id: "transmission",
-    title: "Transmission Services",
-    description: "Expert transmission repair and rebuilding to ensure smooth gear shifting and reliable performance.",
-    image: "https://pixabay.com/get/g7a7fcb407e3b43addbe462fbe23d8d61addaa6590bcdf936d4ff1fea2fb778cf211c41c763dfd03368cdeb1ce0ca2764bed9be5fcace9823e3c6ab14f8c6dc4c_1280.jpg",
-    features: [
-      "Transmission fluid replacement",
-      "Complete transmission rebuilding"
-    ]
-  },
-  {
-    id: "paintwork",
-    title: "Paint & Body Work",
-    description: "Professional paint and body repair services to restore your vehicle's appearance after damage or wear.",
-    image: "https://pixabay.com/get/gdb3ff3ab957d6ea43f8f6b544f5a00da8ad0144d7288e97d9ecd29fb4a715e7d05cf6fc7806b345eb3f2395d5870a6015eee8010e49f39b42b8d81435fc9d2d5_1280.jpg",
-    features: [
-      "Spray paint and custom stencilling",
-      "Dent repair and panel beating"
+      "Computer scanning and diagnostics",
+      "Electrical system troubleshooting",
+      "Wiring repair and replacement",
+      "Sensor and module testing"
     ]
   }
 ];
@@ -162,6 +174,7 @@ export const contactInfo = {
   social: {
     facebook: "https://www.facebook.com/BakemonoJGarage/",
     instagram: "https://www.instagram.com/bakemonojgarageservice/",
+    tiktok: "https://www.tiktok.com/@bakemonojgarage",
     whatsapp: "https://wa.me/60172952514"
   },
   mapLocation: "Lot 5624/2, Jalan Bakti, Klang, Selangor, Malaysia"
@@ -169,11 +182,11 @@ export const contactInfo = {
 
 // Service options for contact form
 export const serviceOptions = [
-  { value: "oil_change", label: "Oil Change Service" },
-  { value: "diagnostics", label: "Diagnostic Service" },
-  { value: "vintage_repairs", label: "Vintage Car Repairs" },
-  { value: "parts", label: "Parts Supply" },
-  { value: "transmission", label: "Transmission Services" },
-  { value: "paintwork", label: "Paint & Body Work" },
+  { value: "maintenance", label: "Periodic Maintenance Service" },
+  { value: "suspension", label: "Suspension Checking" },
+  { value: "steering", label: "Steering Checking" },
+  { value: "inspection", label: "Full Car Inspection" },
+  { value: "hybrid", label: "Hybrid Car Repair" },
+  { value: "diagnostics", label: "Full Diagnostic & Troubleshooting" },
   { value: "other", label: "Other Services" }
 ];

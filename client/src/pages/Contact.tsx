@@ -153,6 +153,15 @@ const Contact = () => {
                       <i className="fab fa-instagram"></i>
                     </a>
                     <a 
+                      href={contactInfo.social.tiktok} 
+                      className="social-icon"
+                      aria-label="TikTok"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fab fa-tiktok"></i>
+                    </a>
+                    <a 
                       href={contactInfo.social.whatsapp} 
                       className="social-icon"
                       aria-label="WhatsApp"

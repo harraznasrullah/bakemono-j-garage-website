@@ -7,6 +7,7 @@ import Services from "@/pages/Services";
 import Gallery from "@/pages/Gallery";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import SocialFeed from "@/pages/SocialFeed";
 import Layout from "@/components/Layout";
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/gallery" component={Gallery} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/social" component={SocialFeed} />
       <Route component={NotFound} />
     </Switch>
   );
