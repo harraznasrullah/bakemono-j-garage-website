@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { contactInfo } from "@/lib/constants";
 import { Link } from "wouter";
@@ -9,6 +9,21 @@ const SocialFeed = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
+  
+  // Load TikTok embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://www.tiktok.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      // Clean up on component unmount
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -30,9 +45,9 @@ const SocialFeed = () => {
       </section>
 
       {/* Social Media Links */}
-      <section className="py-12 bg-neutral-light">
+      <section className="py-8 md:py-12 bg-neutral-light">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
             <motion.a
               href={contactInfo.social.facebook}
               target="_blank"
@@ -82,16 +97,16 @@ const SocialFeed = () => {
       </section>
 
       {/* Embedded Feeds Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="section-title">Recent Posts</h2>
             <p className="section-subtitle">
               Stay up-to-date with our latest social media updates
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* Facebook Embed */}
             <motion.div 
               className="bg-white rounded-lg shadow-md overflow-hidden"
@@ -145,8 +160,6 @@ const SocialFeed = () => {
                 <p className="text-center text-gray-500 mt-4">
                   For more videos, visit our <a href={contactInfo.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-primary font-medium">TikTok profile</a>
                 </p>
-                {/* TikTok embed script */}
-                <script defer src="https://www.tiktok.com/embed.js"></script>
               </div>
             </motion.div>
           </div>
@@ -172,18 +185,7 @@ const SocialFeed = () => {
         </div>
       </section>
 
-      {/* TikTok Embed Script */}
-      <div id="tiktok-script-container" style={{ display: 'none' }}>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              var scriptElement = document.createElement('script');
-              scriptElement.src = 'https://www.tiktok.com/embed.js';
-              document.getElementById('tiktok-script-container').appendChild(scriptElement);
-            })();
-          `
-        }} />
-      </div>
+
     </>
   );
 };
