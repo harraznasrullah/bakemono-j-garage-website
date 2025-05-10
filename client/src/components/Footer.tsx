@@ -122,10 +122,10 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Bakemono J Garage Workshop. All rights reserved.
             </p>
             <div className="flex space-x-4">
-              <Link href="/privacy" className="text-gray-500 hover:text-accent transition duration-200">
+              <Link href="/privacy-policy" className="text-gray-500 hover:text-accent transition duration-200">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-500 hover:text-accent transition duration-200">
+              <Link href="/terms-of-service" className="text-gray-500 hover:text-accent transition duration-200">
                 Terms of Service
               </Link>
             </div>
