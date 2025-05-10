@@ -216,8 +216,15 @@ const Contact = () => {
                 <div className="flex items-center mb-3 md:mb-0">
                   <i className="fab fa-whatsapp text-3xl mr-3"></i>
                   <div>
-                    <h3 className="text-lg font-medium">Contact Us on WhatsApp</h3>
-                    <p className="text-white/90 text-sm">Fast response for inquiries and appointments</p>
+                    <h3 className="text-lg font-medium">
+                      {language === 'en' ? 'Contact Us on WhatsApp' : 'Hubungi Kami di WhatsApp'}
+                    </h3>
+                    <p className="text-white/90 text-sm">
+                      {language === 'en' 
+                        ? 'Fast response for inquiries and appointments' 
+                        : 'Respons cepat untuk pertanyaan dan temujanji'
+                      }
+                    </p>
                   </div>
                 </div>
                 <a 
@@ -227,7 +234,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                 >
                   <i className="fab fa-whatsapp mr-2"></i>
-                  <span>Chat Now: {contactInfo.phone}</span>
+                  <span>{language === 'en' ? 'Chat Now: ' : 'Sembang Sekarang: '}{contactInfo.phone}</span>
                 </a>
               </motion.div>
 
@@ -237,7 +244,7 @@ const Contact = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-xl font-heading font-semibold mb-6">Send Us a Message</h3>
+                <h3 className="text-xl font-heading font-semibold mb-6">{t('contact.form.title')}</h3>
                 
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -247,9 +254,9 @@ const Contact = () => {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Full Name</FormLabel>
+                            <FormLabel>{t('contact.form.name')}</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your name" {...field} />
+                              <Input placeholder={language === 'en' ? "Your name" : "Nama anda"} {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -261,9 +268,9 @@ const Contact = () => {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Email Address</FormLabel>
+                            <FormLabel>{t('contact.form.email')}</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your email" {...field} />
+                              <Input placeholder={language === 'en' ? "Your email" : "Emel anda"} {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -276,9 +283,9 @@ const Contact = () => {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Phone Number</FormLabel>
+                          <FormLabel>{t('contact.form.phone')}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your phone number" {...field} />
+                            <Input placeholder={language === 'en' ? "Your phone number" : "Nombor telefon anda"} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -290,17 +297,17 @@ const Contact = () => {
                       name="service"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Service Required</FormLabel>
+                          <FormLabel>{t('contact.form.service')}</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                               <SelectTrigger>
-                                <SelectValue placeholder="Select a service" />
+                                <SelectValue placeholder={language === 'en' ? "Select a service" : "Pilih perkhidmatan"} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
                               {serviceOptions.map((option) => (
                                 <SelectItem key={option.value} value={option.value}>
-                                  {option.label}
+                                  {language === 'en' ? option.label : option.labelMs || option.label}
                                 </SelectItem>
                               ))}
                             </SelectContent>

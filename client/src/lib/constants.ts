@@ -265,11 +265,39 @@ export const contactInfo = {
 
 // Service options for contact form
 export const serviceOptions = [
-  { value: "maintenance", label: "Periodic Maintenance Service" },
-  { value: "suspension", label: "Suspension Checking" },
-  { value: "steering", label: "Steering Checking" },
-  { value: "inspection", label: "Full Car Inspection" },
-  { value: "hybrid", label: "Hybrid Car Repair" },
-  { value: "diagnostics", label: "Full Diagnostic & Troubleshooting" },
-  { value: "other", label: "Other Services" }
+  { 
+    value: "maintenance", 
+    label: "Periodic Maintenance Service",
+    labelMs: "Servis Penyelenggaraan Berkala"
+  },
+  { 
+    value: "suspension", 
+    label: "Suspension Checking",
+    labelMs: "Pemeriksaan Suspensi"
+  },
+  { 
+    value: "steering", 
+    label: "Steering Checking",
+    labelMs: "Pemeriksaan Stereng"
+  },
+  { 
+    value: "inspection", 
+    label: "Full Car Inspection",
+    labelMs: "Pemeriksaan Kereta Penuh"
+  },
+  { 
+    value: "hybrid", 
+    label: "Hybrid Car Repair",
+    labelMs: "Pembaikan Kereta Hibrid"
+  },
+  { 
+    value: "diagnostics", 
+    label: "Full Diagnostic & Troubleshooting",
+    labelMs: "Diagnostik Penuh & Penyelesaian Masalah"
+  },
+  { 
+    value: "other", 
+    label: "Other Services",
+    labelMs: "Perkhidmatan Lain"
+  }
 ];
