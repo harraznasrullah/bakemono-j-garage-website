@@ -37,9 +37,14 @@ const Home = () => {
                 Quality and functionality guaranteed. We specialize in general repairs, vintage car restoration, and comprehensive maintenance services.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Link href="/contact" className="btn-accent inline-flex items-center justify-center">
+                <a 
+                  href={contactInfo.social.whatsapp} 
+                  className="btn-accent inline-flex items-center justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fab fa-whatsapp mr-2 text-xl"></i> Book Appointment
-                </Link>
+                </a>
                 <Link href="/services" className="btn-secondary inline-flex items-center justify-center">
                   Our Services
                 </Link>

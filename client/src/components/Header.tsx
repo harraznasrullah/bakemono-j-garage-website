@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { useMedia } from "@/hooks/use-mobile";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useMedia("(max-width: 768px)");
   const [location] = useLocation();
+  const { t } = useLanguage();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -18,12 +21,12 @@ const Header = () => {
   };
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/about", label: "About" },
-    { href: "/social", label: "Social Media" },
-    { href: "/contact", label: "Contact" }
+    { href: "/", label: t('nav.home') },
+    { href: "/services", label: t('nav.services') },
+    { href: "/gallery", label: t('nav.gallery') },
+    { href: "/about", label: t('nav.about') },
+    { href: "/social", label: t('nav.social') },
+    { href: "/contact", label: t('nav.contact') }
   ];
 
   return (
@@ -39,7 +42,7 @@ const Header = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
@@ -51,6 +54,7 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
+            <LanguageSwitcher className="ml-2" />
           </nav>
 
           {/* Mobile Navigation Toggle */}
@@ -79,6 +83,9 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-3 mt-3 border-t border-gray-200">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         )}

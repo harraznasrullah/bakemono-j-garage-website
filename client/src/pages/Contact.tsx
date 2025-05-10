@@ -196,6 +196,31 @@ const Contact = () => {
             </div>
 
             <div className="lg:col-span-2">
+              {/* WhatsApp Contact Bar */}
+              <motion.div
+                className="bg-green-600 text-white rounded-lg shadow-md p-4 mb-4 flex flex-col md:flex-row justify-between items-center"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex items-center mb-3 md:mb-0">
+                  <i className="fab fa-whatsapp text-3xl mr-3"></i>
+                  <div>
+                    <h3 className="text-lg font-medium">Contact Us on WhatsApp</h3>
+                    <p className="text-white/90 text-sm">Fast response for inquiries and appointments</p>
+                  </div>
+                </div>
+                <a 
+                  href={contactInfo.social.whatsapp} 
+                  className="bg-white text-green-600 hover:bg-gray-100 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-whatsapp mr-2"></i>
+                  <span>Chat Now: {contactInfo.phone}</span>
+                </a>
+              </motion.div>
+
               <motion.div 
                 className="bg-white rounded-lg shadow-md p-6 mb-8"
                 initial={{ opacity: 0, x: 20 }}
