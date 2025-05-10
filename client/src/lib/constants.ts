@@ -168,7 +168,6 @@ export const contactInfo = {
   phoneNote: "Call or WhatsApp at (+60) 017-295 2514 for inquiries and appointments",
   hours: {
     hq: "9 AM – 6 PM (HQ)",
-    shell: "10 AM – 6 PM (Shell Branch)",
     closed: "Closed on Fridays"
   },
   social: {

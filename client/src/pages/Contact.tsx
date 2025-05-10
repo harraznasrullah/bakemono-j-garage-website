@@ -125,7 +125,6 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium">Business Hours</h4>
                       <p className="text-gray-600">{contactInfo.hours.hq}</p>
-                      <p className="text-gray-600">{contactInfo.hours.shell}</p>
                       <p className="text-gray-600 font-medium">{contactInfo.hours.closed}</p>
                     </div>
                   </div>

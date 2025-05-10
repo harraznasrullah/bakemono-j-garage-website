@@ -3,7 +3,7 @@ import { contactInfo, services } from "@/lib/constants";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const quickLinks = [
     { href: "/", label: t('nav.home') },
