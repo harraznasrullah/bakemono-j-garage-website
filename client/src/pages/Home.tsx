@@ -18,7 +18,7 @@ const Home = () => {
           <div className="absolute inset-0 hero-gradient z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center" 
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')" }}
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1613214450416-9d34fc57d6f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')" }}
           ></div>
           <div className="container h-full flex items-center relative z-10">
             <motion.div 

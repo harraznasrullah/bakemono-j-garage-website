@@ -4,7 +4,7 @@ export const services = [
     id: "oil_change",
     title: "Oil Change Services",
     description: "Regular oil changes help extend engine life and improve performance. We offer both minor and major service packages.",
-    image: "https://pixabay.com/get/g241b007fc724499472f1c430b6d47b388f342371c270fa708977f9f80212f73ec4bbcf8fa2ddc8807b8a36b36849c2704cedfc4f579f2796beea3d4d4ce37b47_1280.jpg",
+    image: "https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
     features: [
       "Minor Service: Oil & filter change, fluid check",
       "Major Service: Comprehensive fluid replacement"
@@ -68,7 +68,7 @@ export const galleryItems = [
     id: 1,
     title: "Vintage Car Restoration",
     description: "Complete restoration of 1968 classic",
-    image: "https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    image: "https://images.unsplash.com/photo-1594148882817-7da01a9ab87f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
   },
   {
     id: 2,
