@@ -185,10 +185,7 @@ const Contact = () => {
                     <i className="far fa-clock mr-3 text-accent"></i>
                     <span>{contactInfo.hours.hq}</span>
                   </li>
-                  <li className="flex items-center">
-                    <i className="far fa-building mr-3 text-accent"></i>
-                    <span>{contactInfo.hours.shell}</span>
-                  </li>
+
                   <li className="flex items-center">
                     <i className="fas fa-calendar-times mr-3 text-accent"></i>
                     <span>{contactInfo.hours.closed}</span>

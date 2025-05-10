@@ -99,9 +99,14 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">Our Services</h2>
+            <h2 className="section-title">
+              {language === 'en' ? 'Our Services' : 'Perkhidmatan Kami'}
+            </h2>
             <p className="section-subtitle">
-              From routine maintenance to specialized repairs, our experienced team provides comprehensive automotive care for your vehicle.
+              {language === 'en'
+                ? 'From routine maintenance to specialized repairs, our experienced team provides comprehensive automotive care for your vehicle.'
+                : 'Dari penyelenggaraan rutin hingga pembaikan khusus, pasukan berpengalaman kami menyediakan penjagaan automotif komprehensif untuk kenderaan anda.'
+              }
             </p>
           </motion.div>
 
@@ -114,12 +119,20 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
               >
-                <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
+                <img 
+                  src={service.image} 
+                  alt={language === 'en' ? service.title.en : service.title.ms}
+                  className="w-full h-48 object-cover" 
+                />
                 <div className="p-6">
-                  <h3 className="text-xl font-heading font-semibold mb-2">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <h3 className="text-xl font-heading font-semibold mb-2">
+                    {language === 'en' ? service.title.en : service.title.ms}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {language === 'en' ? service.description.en : service.description.ms}
+                  </p>
                   <ul className="mb-6 space-y-2">
-                    {service.features.map((feature, i) => (
+                    {(language === 'en' ? service.features.en : service.features.ms).map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
                         <span>{feature}</span>
@@ -127,7 +140,7 @@ const Home = () => {
                     ))}
                   </ul>
                   <Link href={`/services#${service.id}`} className="text-primary hover:text-accent font-medium inline-flex items-center transition duration-200">
-                    Learn More <i className="fas fa-chevron-right ml-2 text-sm"></i>
+                    {language === 'en' ? 'Learn More' : 'Ketahui Lebih Lanjut'} <i className="fas fa-chevron-right ml-2 text-sm"></i>
                   </Link>
                 </div>
               </motion.div>
@@ -136,7 +149,7 @@ const Home = () => {
 
           <div className="mt-12 text-center">
             <Link href="/services" className="btn-primary inline-flex items-center justify-center">
-              View All Services
+              {language === 'en' ? 'View All Services' : 'Lihat Semua Perkhidmatan'}
             </Link>
           </div>
         </div>
@@ -151,8 +164,18 @@ const Home = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-white text-xl md:text-2xl font-heading font-bold mb-2">TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020</h3>
-            <p className="text-white/80 text-lg">Trust your vehicle with award-winning expertise</p>
+            <h3 className="text-white text-xl md:text-2xl font-heading font-bold mb-2">
+              {language === 'en'
+                ? 'TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020'
+                : 'ANTARA 10 MEKANIK PALING DIIKTIRAF DI MALAYSIA 2020'
+              }
+            </h3>
+            <p className="text-white/80 text-lg">
+              {language === 'en'
+                ? 'Trust your vehicle with award-winning expertise'
+                : 'Percayakan kenderaan anda dengan kepakaran bertaraf cemerlang'
+              }
+            </p>
           </motion.div>
         </div>
       </section>
@@ -166,9 +189,14 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">Our Work Gallery</h2>
+            <h2 className="section-title">
+              {language === 'en' ? 'Our Work Gallery' : 'Galeri Kerja Kami'}
+            </h2>
             <p className="section-subtitle">
-              Browse through our recent automotive repair projects and restoration work.
+              {language === 'en'
+                ? 'Browse through our recent automotive repair projects and restoration work.'
+                : 'Lihat projek pembaikan automotif dan kerja pemulihan terkini kami.'
+              }
             </p>
           </motion.div>
 
@@ -207,9 +235,15 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">What Our Customers Say</h2>
+            <h2 className="section-title">
+              {language === 'en' 
+                ? 'What Our Customers Say' 
+                : 'Apa Kata Pelanggan Kami'}
+            </h2>
             <p className="section-subtitle">
-              Read testimonials from our satisfied customers who trust us with their vehicles.
+              {language === 'en'
+                ? 'Read testimonials from our satisfied customers who trust us with their vehicles.'
+                : 'Baca testimoni daripada pelanggan kami yang berpuas hati yang mempercayai kami dengan kenderaan mereka.'}
             </p>
           </motion.div>
 
@@ -217,12 +251,17 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div 
                 key={testimonial.id}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300"
+                className="group bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="flex text-accent mb-3">
+                {/* Decorative background element */}
+                <div className="absolute -right-4 -top-4 w-20 h-20 bg-accent/10 rounded-full transition-transform duration-300 group-hover:scale-150"></div>
+                
+                {/* Rating stars */}
+                <div className="flex text-accent mb-3 relative z-10">
                   {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
                     <i key={i} className="fas fa-star"></i>
                   ))}
@@ -230,10 +269,16 @@ const Home = () => {
                     <i className="fas fa-star-half-alt"></i>
                   )}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-primary font-bold">{testimonial.initials}</span>
+                
+                {/* Testimonial text */}
+                <p className="text-gray-600 mb-4 italic relative z-10 group-hover:text-gray-800 transition-colors duration-300">
+                  "{testimonial.text}"
+                </p>
+                
+                {/* Customer info */}
+                <div className="flex items-center relative z-10">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-3 transition-all duration-300 group-hover:bg-primary/40 group-hover:shadow-md">
+                    <span className="text-primary font-bold text-sm">{testimonial.initials}</span>
                   </div>
                   <div>
                     <h4 className="font-medium">{testimonial.name}</h4>

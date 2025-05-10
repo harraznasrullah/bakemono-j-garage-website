@@ -2,75 +2,159 @@
 export const services = [
   {
     id: "maintenance",
-    title: "Periodic Maintenance Service",
-    description: "Regular maintenance is essential for keeping your vehicle in optimal condition. Our comprehensive periodic service packages ensure your car runs smoothly and reliably.",
+    title: {
+      en: "Periodic Maintenance Service",
+      ms: "Servis Penyelenggaraan Berkala"
+    },
+    description: {
+      en: "Regular maintenance is essential for keeping your vehicle in optimal condition. Our comprehensive periodic service packages ensure your car runs smoothly and reliably.",
+      ms: "Penyelenggaraan berkala adalah penting untuk memastikan kenderaan anda dalam keadaan optimum. Pakej servis berkala komprehensif kami memastikan kereta anda berjalan dengan lancar dan boleh dipercayai."
+    },
     image: "https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    features: [
-      "Oil and filter changes",
-      "Fluid level checks and top-ups",
-      "Multi-point inspection",
-      "Brake system check"
-    ]
+    features: {
+      en: [
+        "Oil and filter changes",
+        "Fluid level checks and top-ups",
+        "Multi-point inspection",
+        "Brake system check"
+      ],
+      ms: [
+        "Penukaran minyak dan penapis",
+        "Pemeriksaan tahap cecair dan penambahan",
+        "Pemeriksaan pelbagai titik",
+        "Pemeriksaan sistem brek"
+      ]
+    }
   },
   {
     id: "suspension",
-    title: "Suspension Checking",
-    description: "Our thorough suspension inspection ensures your vehicle handles properly and provides a comfortable ride while maintaining optimal tire wear.",
+    title: {
+      en: "Suspension Checking",
+      ms: "Pemeriksaan Suspensi"
+    },
+    description: {
+      en: "Our thorough suspension inspection ensures your vehicle handles properly and provides a comfortable ride while maintaining optimal tire wear.",
+      ms: "Pemeriksaan suspensi menyeluruh kami memastikan kenderaan anda bergerak dengan baik dan memberikan perjalanan yang selesa sambil mengekalkan kehausan tayar yang optimum."
+    },
     image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    features: [
-      "Shock absorber inspection",
-      "Spring and strut assessment",
-      "Bushing and mount evaluation",
-      "Alignment check"
-    ]
+    features: {
+      en: [
+        "Shock absorber inspection",
+        "Spring and strut assessment",
+        "Bushing and mount evaluation",
+        "Alignment check"
+      ],
+      ms: [
+        "Pemeriksaan penyerap kejutan",
+        "Penilaian spring dan strut",
+        "Penilaian bushing dan mount",
+        "Pemeriksaan penjajaran"
+      ]
+    }
   },
   {
     id: "steering",
-    title: "Steering Checking",
-    description: "Precise steering is crucial for safety and handling. Our comprehensive steering checks identify any issues before they become serious problems.",
+    title: {
+      en: "Steering Checking",
+      ms: "Pemeriksaan Stereng"
+    },
+    description: {
+      en: "Precise steering is crucial for safety and handling. Our comprehensive steering checks identify any issues before they become serious problems.",
+      ms: "Stereng yang tepat adalah penting untuk keselamatan dan pengendalian. Pemeriksaan stereng komprehensif kami mengenal pasti sebarang masalah sebelum ia menjadi masalah serius."
+    },
     image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    features: [
-      "Power steering system inspection",
-      "Steering rack and pinion check",
-      "Tie rod and end link evaluation",
-      "Steering fluid assessment"
-    ]
+    features: {
+      en: [
+        "Power steering system inspection",
+        "Steering rack and pinion check",
+        "Tie rod and end link evaluation",
+        "Steering fluid assessment"
+      ],
+      ms: [
+        "Pemeriksaan sistem stereng kuasa",
+        "Pemeriksaan rak dan pinan stereng",
+        "Penilaian rod pengikat dan pautan hujung",
+        "Penilaian cecair stereng"
+      ]
+    }
   },
   {
     id: "inspection",
-    title: "Full Car Inspection",
-    description: "Our detailed vehicle inspection covers all major systems to ensure your car is safe, reliable, and performing at its best.",
+    title: {
+      en: "Full Car Inspection",
+      ms: "Pemeriksaan Kereta Penuh"
+    },
+    description: {
+      en: "Our detailed vehicle inspection covers all major systems to ensure your car is safe, reliable, and performing at its best.",
+      ms: "Pemeriksaan kenderaan terperinci kami meliputi semua sistem utama untuk memastikan kereta anda selamat, boleh dipercayai, dan berfungsi dengan terbaik."
+    },
     image: "https://images.unsplash.com/photo-1613214450416-9d34fc57d6f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    features: [
-      "Engine and transmission inspection",
-      "Brake and suspension system check",
-      "Electrical system testing",
-      "Exhaust and emissions evaluation"
-    ]
+    features: {
+      en: [
+        "Engine and transmission inspection",
+        "Brake and suspension system check",
+        "Electrical system testing",
+        "Exhaust and emissions evaluation"
+      ],
+      ms: [
+        "Pemeriksaan enjin dan transmisi",
+        "Pemeriksaan sistem brek dan suspensi",
+        "Ujian sistem elektrik",
+        "Penilaian ekzos dan pelepasan"
+      ]
+    }
   },
   {
     id: "hybrid",
-    title: "Hybrid Car Repair",
-    description: "Our technicians are specially trained to diagnose and repair hybrid vehicles, handling both conventional and electric-specific components.",
+    title: {
+      en: "Hybrid Car Repair",
+      ms: "Pembaikan Kereta Hibrid"
+    },
+    description: {
+      en: "Our technicians are specially trained to diagnose and repair hybrid vehicles, handling both conventional and electric-specific components.",
+      ms: "Juruteknik kami dilatih khas untuk mendiagnosis dan membaiki kenderaan hibrid, mengendalikan kedua-dua komponen konvensional dan khusus elektrik."
+    },
     image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    features: [
-      "Hybrid battery system diagnostics",
-      "Electric motor repair",
-      "Regenerative braking system service",
-      "Power management system troubleshooting"
-    ]
+    features: {
+      en: [
+        "Hybrid battery system diagnostics",
+        "Electric motor repair",
+        "Regenerative braking system service",
+        "Power management system troubleshooting"
+      ],
+      ms: [
+        "Diagnostik sistem bateri hibrid",
+        "Pembaikan motor elektrik",
+        "Perkhidmatan sistem brek regeneratif",
+        "Penyelesaian masalah sistem pengurusan kuasa"
+      ]
+    }
   },
   {
     id: "diagnostics",
-    title: "Full Diagnostic, Wiring and Troubleshooting",
-    description: "Using advanced diagnostic equipment, we can identify and resolve complex electrical and mechanical issues in your vehicle.",
+    title: {
+      en: "Full Diagnostic, Wiring and Troubleshooting",
+      ms: "Diagnostik Penuh, Pendawaian dan Penyelesaian Masalah"
+    },
+    description: {
+      en: "Using advanced diagnostic equipment, we can identify and resolve complex electrical and mechanical issues in your vehicle.",
+      ms: "Menggunakan peralatan diagnostik termaju, kami dapat mengenal pasti dan menyelesaikan masalah elektrik dan mekanikal yang kompleks dalam kenderaan anda."
+    },
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    features: [
-      "Computer scanning and diagnostics",
-      "Electrical system troubleshooting",
-      "Wiring repair and replacement",
-      "Sensor and module testing"
-    ]
+    features: {
+      en: [
+        "Computer scanning and diagnostics",
+        "Electrical system troubleshooting",
+        "Wiring repair and replacement",
+        "Sensor and module testing"
+      ],
+      ms: [
+        "Pengimbasan dan diagnostik komputer",
+        "Penyelesaian masalah sistem elektrik",
+        "Pembaikan dan penggantian pendawaian",
+        "Ujian sensor dan modul"
+      ]
+    }
   }
 ];
 

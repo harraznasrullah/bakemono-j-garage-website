@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { services } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { language } = useLanguage();
+  
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -20,9 +23,14 @@ const Services = () => {
             animate="visible"
             variants={fadeIn}
           >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">Our Automotive Services</h1>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
+              {language === 'en' ? 'Our Automotive Services' : 'Perkhidmatan Automotif Kami'}
+            </h1>
             <p className="text-xl text-white/80 mb-8">
-              Comprehensive automotive repair and maintenance services performed by experienced mechanics
+              {language === 'en' 
+                ? 'Comprehensive automotive repair and maintenance services performed by experienced mechanics'
+                : 'Perkhidmatan pembaikan dan penyelenggaraan automotif komprehensif dilakukan oleh mekanik berpengalaman'
+              }
             </p>
           </motion.div>
         </div>
@@ -41,12 +49,20 @@ const Services = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
+                <img 
+                  src={service.image} 
+                  alt={language === 'en' ? service.title.en : service.title.ms}
+                  className="w-full h-48 object-cover" 
+                />
                 <div className="p-6">
-                  <h3 className="text-xl font-heading font-semibold mb-2">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <h3 className="text-xl font-heading font-semibold mb-2">
+                    {language === 'en' ? service.title.en : service.title.ms}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {language === 'en' ? service.description.en : service.description.ms}
+                  </p>
                   <ul className="mb-6 space-y-2">
-                    {service.features.map((feature, i) => (
+                    {(language === 'en' ? service.features.en : service.features.ms).map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <i className="fas fa-check-circle text-success mt-1 mr-2"></i>
                         <span>{feature}</span>
@@ -70,30 +86,38 @@ const Services = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Quality Service Guarantees</h2>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                  {language === 'en' ? 'Quality Service Guarantees' : 'Jaminan Perkhidmatan Berkualiti'}
+                </h2>
                 <p className="text-gray-600 mb-4">
-                  At Bakemono J Garage Workshop, we stand behind our work with confidence. Our team of certified mechanics brings years of experience and technical expertise to every job, ensuring your vehicle receives the highest quality care.
+                  {language === 'en' 
+                    ? 'At Bakemono J Garage Workshop, we stand behind our work with confidence. Our team of certified mechanics brings years of experience and technical expertise to every job, ensuring your vehicle receives the highest quality care.'
+                    : 'Di Bakemono J Garage Workshop, kami yakin dengan kerja kami. Pasukan mekanik bertauliah kami membawa pengalaman dan kepakaran teknikal bertahun-tahun kepada setiap kerja, memastikan kenderaan anda menerima penjagaan berkualiti tertinggi.'
+                  }
                 </p>
                 <p className="text-gray-600 mb-6">
-                  We use only quality parts and the latest diagnostic equipment to deliver accurate repairs and maintenance services. Our commitment to excellence has earned us recognition as one of Malaysia's top mechanics.
+                  {language === 'en'
+                    ? 'We use only quality parts and the latest diagnostic equipment to deliver accurate repairs and maintenance services. Our commitment to excellence has earned us recognition as one of Malaysia\'s top mechanics.'
+                    : 'Kami hanya menggunakan alat ganti berkualiti dan peralatan diagnostik terkini untuk memberikan perkhidmatan pembaikan dan penyelenggaraan yang tepat. Komitmen kami terhadap kecemerlangan telah menjadikan kami diiktiraf sebagai salah satu mekanik terbaik di Malaysia.'
+                  }
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                   <div className="flex items-start">
                     <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
-                    <span>30-day service guarantee</span>
+                    <span>{language === 'en' ? '30-day service guarantee' : 'Jaminan servis 30 hari'}</span>
                   </div>
                   <div className="flex items-start">
                     <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
-                    <span>Transparent pricing</span>
+                    <span>{language === 'en' ? 'Transparent pricing' : 'Harga yang telus'}</span>
                   </div>
                   <div className="flex items-start">
                     <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
-                    <span>Quality parts used</span>
+                    <span>{language === 'en' ? 'Quality parts used' : 'Alat ganti berkualiti digunakan'}</span>
                   </div>
                   <div className="flex items-start">
                     <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
-                    <span>Professional technicians</span>
+                    <span>{language === 'en' ? 'Professional technicians' : 'Juruteknik profesional'}</span>
                   </div>
                 </div>
               </motion.div>
@@ -104,7 +128,7 @@ const Services = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
                 <Link href="/contact" className="btn-primary inline-flex items-center justify-center">
-                  Book a Service Now
+                  {language === 'en' ? 'Book a Service Now' : 'Tempah Servis Sekarang'}
                 </Link>
               </motion.div>
             </div>
@@ -134,9 +158,14 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">Frequently Asked Questions</h2>
+            <h2 className="section-title">
+              {language === 'en' ? 'Frequently Asked Questions' : 'Soalan Lazim'}
+            </h2>
             <p className="section-subtitle">
-              Get answers to common questions about our automotive services
+              {language === 'en' 
+                ? 'Get answers to common questions about our automotive services'
+                : 'Dapatkan jawapan untuk soalan lazim tentang perkhidmatan automotif kami'
+              }
             </p>
           </motion.div>
 
@@ -144,24 +173,54 @@ const Services = () => {
             <div className="space-y-4">
               {[
                 {
-                  question: "How often should I change my oil?",
-                  answer: "For most vehicles, we recommend changing your oil every 5,000 to 7,500 kilometers or every 6 months, whichever comes first. However, this may vary based on your vehicle type, age, and driving conditions."
+                  question: {
+                    en: "How often should I change my oil?",
+                    ms: "Berapa kerap saya harus menukar minyak enjin?"
+                  },
+                  answer: {
+                    en: "For most vehicles, we recommend changing your oil every 5,000 to 7,500 kilometers or every 6 months, whichever comes first. However, this may vary based on your vehicle type, age, and driving conditions.",
+                    ms: "Untuk kebanyakan kenderaan, kami mengesyorkan penukaran minyak setiap 5,000 hingga 7,500 kilometer atau setiap 6 bulan, yang mana lebih awal. Walau bagaimanapun, ini mungkin berbeza bergantung pada jenis kenderaan, usia, dan keadaan pemanduan anda."
+                  }
                 },
                 {
-                  question: "Do you work on all vehicle makes and models?",
-                  answer: "Yes, our technicians are experienced with most makes and models, including domestic, imported, and vintage vehicles. We have specialized expertise in both modern vehicles and classic car restoration."
+                  question: {
+                    en: "Do you work on all vehicle makes and models?",
+                    ms: "Adakah anda mengendalikan semua jenis dan model kenderaan?"
+                  },
+                  answer: {
+                    en: "Yes, our technicians are experienced with most makes and models, including domestic, imported, and vintage vehicles. We have specialized expertise in both modern vehicles and classic car restoration.",
+                    ms: "Ya, juruteknik kami berpengalaman dengan kebanyakan jenis dan model, termasuk kenderaan tempatan, import, dan vintage. Kami mempunyai kepakaran khusus dalam kenderaan moden dan pemulihan kereta klasik."
+                  }
                 },
                 {
-                  question: "How do I know if my transmission needs service?",
-                  answer: "Signs that your transmission may need service include: difficulty shifting gears, unusual noises when in neutral, leaking fluid, grinding or shaking during gear shifts, and warning lights on your dashboard."
+                  question: {
+                    en: "How do I know if my transmission needs service?",
+                    ms: "Bagaimana saya tahu jika transmisi saya perlu diservis?"
+                  },
+                  answer: {
+                    en: "Signs that your transmission may need service include: difficulty shifting gears, unusual noises when in neutral, leaking fluid, grinding or shaking during gear shifts, and warning lights on your dashboard.",
+                    ms: "Tanda-tanda bahawa transmisi anda mungkin perlu diservis termasuk: kesukaran menukar gear, bunyi luar biasa ketika dalam keadaan neutral, kebocoran cecair, bunyi bergesel atau gegaran semasa pertukaran gear, dan lampu amaran pada papan pemuka anda."
+                  }
                 },
                 {
-                  question: "Do you provide warranty on repairs?",
-                  answer: "Yes, we stand behind our work with a 30-day service guarantee on all repairs. Some parts may also carry their own manufacturer warranties, which we'll explain at the time of service."
+                  question: {
+                    en: "Do you provide warranty on repairs?",
+                    ms: "Adakah anda memberikan jaminan pada pembaikan?"
+                  },
+                  answer: {
+                    en: "Yes, we stand behind our work with a 30-day service guarantee on all repairs. Some parts may also carry their own manufacturer warranties, which we'll explain at the time of service.",
+                    ms: "Ya, kami menyokong kerja kami dengan jaminan perkhidmatan 30 hari untuk semua pembaikan. Sesetengah bahagian juga mungkin mempunyai jaminan pengeluar mereka sendiri, yang akan kami jelaskan pada masa servis."
+                  }
                 },
                 {
-                  question: "How do I schedule an appointment?",
-                  answer: "You can schedule an appointment by calling us, using our WhatsApp booking service, or filling out the contact form on our website. We'll confirm your appointment and provide any necessary preparation instructions."
+                  question: {
+                    en: "How do I schedule an appointment?",
+                    ms: "Bagaimana saya boleh membuat temujanji?"
+                  },
+                  answer: {
+                    en: "You can schedule an appointment by calling us, using our WhatsApp booking service, or filling out the contact form on our website. We'll confirm your appointment and provide any necessary preparation instructions.",
+                    ms: "Anda boleh membuat temujanji dengan menghubungi kami, menggunakan perkhidmatan tempahan WhatsApp, atau mengisi borang hubungan di laman web kami. Kami akan mengesahkan temujanji anda dan memberikan arahan persediaan yang diperlukan."
+                  }
                 }
               ].map((faq, index) => (
                 <motion.div 
@@ -172,8 +231,12 @@ const Services = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <div className="p-6">
-                    <h3 className="text-lg font-heading font-semibold mb-2">{faq.question}</h3>
-                    <p className="text-gray-600">{faq.answer}</p>
+                    <h3 className="text-lg font-heading font-semibold mb-2">
+                      {language === 'en' ? faq.question.en : faq.question.ms}
+                    </h3>
+                    <p className="text-gray-600">
+                      {language === 'en' ? faq.answer.en : faq.answer.ms}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -190,12 +253,18 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Ready to Book Your Service?</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">
+              {language === 'en' ? 'Ready to Book Your Service?' : 'Bersedia untuk Tempah Servis Anda?'}
+            </h2>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Contact us today to schedule an appointment with our experienced mechanics.
+              {language === 'en'
+                ? 'Contact us today to schedule an appointment with our experienced mechanics.'
+                : 'Hubungi kami hari ini untuk membuat temujanji dengan mekanik berpengalaman kami.'
+              }
             </p>
             <Link href="/contact" className="btn-accent inline-flex items-center justify-center">
-              <i className="fas fa-calendar-alt mr-2"></i> Book Appointment
+              <i className="fas fa-calendar-alt mr-2"></i> 
+              {language === 'en' ? 'Book Appointment' : 'Tempah Janji Temu'}
             </Link>
           </motion.div>
         </div>

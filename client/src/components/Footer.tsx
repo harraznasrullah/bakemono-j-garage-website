@@ -90,7 +90,7 @@ const Footer = () => {
                     href={`/services#${service.id}`} 
                     className="text-gray-400 hover:text-accent transition duration-200"
                   >
-                    {service.title}
+                    {language === 'en' ? service.title.en : service.title.ms}
                   </Link>
                 </li>
               ))}
