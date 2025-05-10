@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { contactInfo } from "@/lib/constants";
 import { Link } from "wouter";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SocialFeed = () => {
+  const { language, t } = useLanguage();
+  
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -36,9 +39,11 @@ const SocialFeed = () => {
             animate="visible"
             variants={fadeIn}
           >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">Our Social Media</h1>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
+              {t('social.hero.title')}
+            </h1>
             <p className="text-xl text-white/80 mb-8">
-              Follow us for updates, tips, and glimpses of our latest automotive work
+              {t('social.hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -59,7 +64,12 @@ const SocialFeed = () => {
             >
               <i className="fab fa-facebook text-5xl text-[#1877F2] mb-4"></i>
               <h3 className="text-xl font-heading font-semibold mb-2">Facebook</h3>
-              <p className="text-gray-600 mb-4">Follow our page for updates, promotions and customer reviews</p>
+              <p className="text-gray-600 mb-4">
+                {language === 'en'
+                  ? 'Follow our page for updates, promotions and customer reviews'
+                  : 'Ikuti halaman kami untuk kemas kini, promosi dan ulasan pelanggan'
+                }
+              </p>
               <span className="inline-block text-primary font-medium">@BakemonoJGarage</span>
             </motion.a>
 
@@ -74,7 +84,12 @@ const SocialFeed = () => {
             >
               <i className="fab fa-instagram text-5xl text-[#E1306C] mb-4"></i>
               <h3 className="text-xl font-heading font-semibold mb-2">Instagram</h3>
-              <p className="text-gray-600 mb-4">Check out photos and videos of our work in progress</p>
+              <p className="text-gray-600 mb-4">
+                {language === 'en'
+                  ? 'Check out photos and videos of our work in progress'
+                  : 'Lihat foto dan video kerja-kerja kami yang sedang berlangsung'
+                }
+              </p>
               <span className="inline-block text-primary font-medium">@bakemonojgarageservice</span>
             </motion.a>
 
@@ -89,7 +104,12 @@ const SocialFeed = () => {
             >
               <i className="fab fa-tiktok text-5xl text-[#000000] mb-4"></i>
               <h3 className="text-xl font-heading font-semibold mb-2">TikTok</h3>
-              <p className="text-gray-600 mb-4">Watch quick videos of our repair processes and results</p>
+              <p className="text-gray-600 mb-4">
+                {language === 'en'
+                  ? 'Watch quick videos of our repair processes and results'
+                  : 'Tonton video ringkas proses pembaikan dan hasilnya'
+                }
+              </p>
               <span className="inline-block text-primary font-medium">@bakemonojgarage</span>
             </motion.a>
           </div>
@@ -100,9 +120,9 @@ const SocialFeed = () => {
       <section className="py-10 md:py-16 bg-white">
         <div className="container">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="section-title">Recent Posts</h2>
+            <h2 className="section-title">{t('social.recent')}</h2>
             <p className="section-subtitle">
-              Stay up-to-date with our latest social media updates
+              {t('social.recent.subtitle')}
             </p>
           </div>
 
@@ -116,7 +136,8 @@ const SocialFeed = () => {
             >
               <div className="p-4 border-b bg-[#f0f2f5]">
                 <h3 className="text-xl font-heading font-semibold flex items-center">
-                  <i className="fab fa-facebook-square text-[#1877F2] mr-2"></i> Facebook Feed
+                  <i className="fab fa-facebook-square text-[#1877F2] mr-2"></i> 
+                  {language === 'en' ? 'Facebook Feed' : 'Suapan Facebook'}
                 </h3>
               </div>
               <div className="h-[700px] overflow-hidden bg-white">
@@ -142,7 +163,8 @@ const SocialFeed = () => {
             >
               <div className="p-4 border-b bg-[#f0f2f5]">
                 <h3 className="text-xl font-heading font-semibold flex items-center">
-                  <i className="fab fa-tiktok text-black mr-2"></i> TikTok Feed
+                  <i className="fab fa-tiktok text-black mr-2"></i> 
+                  {language === 'en' ? 'TikTok Feed' : 'Suapan TikTok'}
                 </h3>
               </div>
               <div className="h-[700px] overflow-auto p-4 bg-white">
