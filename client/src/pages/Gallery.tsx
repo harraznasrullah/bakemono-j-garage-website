@@ -147,9 +147,14 @@ const Gallery = () => {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-heading font-semibold mb-2">Performance Upgrades</h3>
+                <h3 className="text-xl font-heading font-semibold mb-2">
+                  {language === 'en' ? 'Performance Upgrades' : 'Peningkatan Prestasi'}
+                </h3>
                 <p className="text-gray-600">
-                  Enhance your vehicle's performance with our expert tuning, engine modifications, and performance part installations.
+                  {language === 'en'
+                    ? 'Enhance your vehicle\'s performance with our expert tuning, engine modifications, and performance part installations.'
+                    : 'Tingkatkan prestasi kenderaan anda dengan penalaan pakar kami, pengubahsuaian enjin, dan pemasangan bahagian prestasi.'
+                  }
                 </p>
               </div>
             </motion.div>
@@ -165,16 +170,22 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Have a Project in Mind?</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">
+              {language === 'en' ? 'Have a Project in Mind?' : 'Ada Projek yang Anda Fikirkan?'}
+            </h2>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Whether it's restoration, repair, or customization, our team has the expertise to bring your vision to life.
+              {language === 'en'
+                ? 'Whether it\'s restoration, repair, or customization, our team has the expertise to bring your vision to life.'
+                : 'Sama ada pemulihan, pembaikan, atau pengubahsuaian, pasukan kami mempunyai kepakaran untuk merealisasikan visi anda.'
+              }
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="/contact" className="btn-accent inline-flex items-center justify-center">
-                <i className="fas fa-comments mr-2"></i> Discuss Your Project
+                <i className="fas fa-comments mr-2"></i> 
+                {language === 'en' ? 'Discuss Your Project' : 'Bincangkan Projek Anda'}
               </Link>
               <Link href="/services" className="btn-secondary inline-flex items-center justify-center">
-                View Our Services
+                {language === 'en' ? 'View Our Services' : 'Lihat Perkhidmatan Kami'}
               </Link>
             </div>
           </motion.div>
