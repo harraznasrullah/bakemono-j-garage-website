@@ -220,7 +220,7 @@ const Home = () => {
 
           <div className="mt-12 text-center">
             <Link href="/gallery" className="btn-outline inline-flex items-center justify-center">
-              View More <i className="fas fa-arrow-right ml-2"></i>
+              {language === 'en' ? 'View More' : 'Lihat Lagi'} <i className="fas fa-arrow-right ml-2"></i>
             </Link>
           </div>
         </div>
@@ -299,16 +299,24 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Ready to Experience Quality Automotive Service?</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">
+              {language === 'en'
+                ? 'Ready to Experience Quality Automotive Service?'
+                : 'Bersedia Mengalami Perkhidmatan Automotif Berkualiti?'
+              }
+            </h2>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Book your appointment today and see why we're among Malaysia's top recognized mechanics.
+              {language === 'en'
+                ? 'Book your appointment today and see why we\'re among Malaysia\'s top recognized mechanics.'
+                : 'Tempah temujanji anda hari ini dan lihat mengapa kami antara mekanik terkenal di Malaysia.'
+              }
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="/contact" className="btn-accent inline-flex items-center justify-center">
-                <i className="fas fa-calendar-alt mr-2"></i> Book Appointment
+                <i className="fas fa-calendar-alt mr-2"></i> {language === 'en' ? 'Book Appointment' : 'Tempah Janji Temu'}
               </Link>
               <Link href="/services" className="btn-secondary inline-flex items-center justify-center">
-                Explore Services
+                {language === 'en' ? 'Explore Services' : 'Lihat Perkhidmatan'}
               </Link>
             </div>
           </motion.div>

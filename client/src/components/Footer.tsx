@@ -123,18 +123,22 @@ const Footer = () => {
           <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row justify-between items-center">
             <div className="flex flex-col items-center md:items-start">
               <p className="text-gray-500 mb-2 md:mb-1">
-                &copy; {new Date().getFullYear()} Bakemono J Garage Workshop. All rights reserved.
+                &copy; {new Date().getFullYear()} Bakemono J Garage Workshop. 
+                {language === 'en' ? ' All rights reserved.' : ' Hak cipta terpelihara.'}
               </p>
               <p className="text-gray-500 text-sm">
-                Serving Klang, Shah Alam, Subang Jaya, and nearby areas.
+                {language === 'en' 
+                  ? 'Serving Klang, Shah Alam, Subang Jaya, and nearby areas.'
+                  : 'Melayani Klang, Shah Alam, Subang Jaya, dan kawasan berdekatan.'
+                }
               </p>
             </div>
             <div className="flex space-x-4">
               <Link href="/privacy-policy" className="text-gray-500 hover:text-accent transition duration-200">
-                Privacy Policy
+                {language === 'en' ? 'Privacy Policy' : 'Dasar Privasi'}
               </Link>
               <Link href="/terms-of-service" className="text-gray-500 hover:text-accent transition duration-200">
-                Terms of Service
+                {language === 'en' ? 'Terms of Service' : 'Terma Perkhidmatan'}
               </Link>
             </div>
           </div>
