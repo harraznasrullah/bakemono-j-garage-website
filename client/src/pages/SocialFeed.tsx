@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { contactInfo } from "@/lib/constants";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
+import TikTokEmbed from "@/components/TikTokEmbed";
 
 const SocialFeed = () => {
   const { language, t } = useLanguage();
@@ -12,21 +12,6 @@ const SocialFeed = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
-  
-  // Load TikTok embed script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.tiktok.com/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-    
-    return () => {
-      // Clean up on component unmount
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
 
   return (
     <>
@@ -169,37 +154,9 @@ const SocialFeed = () => {
               </div>
               <div className="h-[700px] overflow-auto p-4 bg-white">
                 <div className="flex flex-col items-center">
-                  <blockquote 
-                    className="tiktok-embed" 
-                    cite="https://www.tiktok.com/@bakemonojgarage" 
-                    data-unique-id="bakemonojgarage"
-                    style={{ 
-                      width: '100%', 
-                      maxWidth: '605px',
-                      minWidth: '325px',
-                      margin: '0 auto',
-                      borderRadius: '8px',
-                      boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-                    }}
-                  >
-                    <section>
-                    <a href="https://www.tiktok.com/@bakemonojgarage" target="_blank" rel="noopener noreferrer">@bakemonojgarage</a>
-                    </section>
-                  </blockquote>
-                  
-                  {/* TikTok embed script */}
-                  <script
-                    dangerouslySetInnerHTML={{
-                      __html: `
-                        (function() {
-                          var d = document, s = d.createElement('script');
-                          s.src = 'https://www.tiktok.com/embed.js';
-                          s.async = true;
-                          s.setAttribute('data-scriptid', 'tiktok-embed');
-                          d.body.appendChild(s);
-                        })();
-                      `
-                    }}
+                  <TikTokEmbed
+                    username="bakemonojgarage"
+                    className="w-full max-w-[605px] min-w-[325px] mx-auto rounded-lg shadow-md"
                   />
                   <p className="text-center text-gray-500 mt-4">
                     {language === 'en' 

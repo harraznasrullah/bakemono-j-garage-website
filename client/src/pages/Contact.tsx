@@ -196,14 +196,14 @@ const Contact = () => {
               >
                 <h3 className="text-xl font-heading font-semibold mb-4">{t('contact.hours')}</h3>
                 <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <i className="far fa-clock mr-3 text-accent"></i>
-                    <span>{contactInfo.hours.hq}</span>
+                  <li className="flex items-start">
+                    <i className="far fa-clock mt-1 mr-3 text-accent"></i>
+                    <span className="flex-1">{contactInfo.hours.hq}</span>
                   </li>
 
-                  <li className="flex items-center">
-                    <i className="fas fa-calendar-times mr-3 text-accent"></i>
-                    <span>{language === 'en' ? contactInfo.hours.closed : 'Tutup pada Jumaat'}</span>
+                  <li className="flex items-start">
+                    <i className="fas fa-calendar-times mt-1 mr-3 text-accent"></i>
+                    <span className="flex-1">{language === 'en' ? contactInfo.hours.closed : 'Tutup pada Jumaat'}</span>
                   </li>
                 </ul>
               </motion.div>
@@ -223,7 +223,7 @@ const Contact = () => {
                     ? 'Proudly serving customers throughout:' 
                     : 'Berbangga melayani pelanggan di seluruh:'}
                 </p>
-                <div className="grid grid-cols-2 gap-2 mb-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
                   <div className="flex items-center">
                     <i className="fas fa-map-marker-alt text-primary mr-2"></i>
                     <span>Klang</span>
@@ -266,7 +266,7 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="flex items-center mb-3 md:mb-0">
+                <div className="flex items-center mb-4 md:mb-0">
                   <i className="fab fa-whatsapp text-3xl mr-3"></i>
                   <div>
                     <h3 className="text-lg font-medium">
@@ -282,7 +282,7 @@ const Contact = () => {
                 </div>
                 <a 
                   href={contactInfo.social.whatsapp} 
-                  className="bg-white text-green-600 hover:bg-gray-100 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center"
+                  className="bg-white text-green-600 hover:bg-gray-100 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center w-full md:w-auto justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
