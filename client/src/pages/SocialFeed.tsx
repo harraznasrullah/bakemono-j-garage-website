@@ -169,19 +169,38 @@ const SocialFeed = () => {
               </div>
               <div className="h-[700px] overflow-auto p-4 bg-white">
                 <div className="flex flex-col items-center">
-                  <iframe 
-                    src="https://www.tiktok.com/embed/v2/@bakemonojgarage" 
+                  <blockquote 
+                    className="tiktok-embed" 
+                    cite="https://www.tiktok.com/@bakemonojgarage" 
+                    data-unique-id="bakemonojgarage"
                     style={{ 
                       width: '100%', 
-                      height: '600px', 
-                      border: 'none',
+                      maxWidth: '605px',
+                      minWidth: '325px',
+                      margin: '0 auto',
                       borderRadius: '8px',
                       boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
                     }}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title="TikTok Feed"
-                  ></iframe>
+                  >
+                    <section>
+                    <a href="https://www.tiktok.com/@bakemonojgarage" target="_blank" rel="noopener noreferrer">@bakemonojgarage</a>
+                    </section>
+                  </blockquote>
+                  
+                  {/* TikTok embed script */}
+                  <script
+                    dangerouslySetInnerHTML={{
+                      __html: `
+                        (function() {
+                          var d = document, s = d.createElement('script');
+                          s.src = 'https://www.tiktok.com/embed.js';
+                          s.async = true;
+                          s.setAttribute('data-scriptid', 'tiktok-embed');
+                          d.body.appendChild(s);
+                        })();
+                      `
+                    }}
+                  />
                   <p className="text-center text-gray-500 mt-4">
                     {language === 'en' 
                       ? 'For more videos, visit our '

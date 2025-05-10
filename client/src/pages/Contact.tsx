@@ -203,9 +203,58 @@ const Contact = () => {
 
                   <li className="flex items-center">
                     <i className="fas fa-calendar-times mr-3 text-accent"></i>
-                    <span>{language === 'en' ? contactInfo.hours.closed : 'Tutup: Ahad'}</span>
+                    <span>{language === 'en' ? contactInfo.hours.closed : 'Tutup pada Jumaat'}</span>
                   </li>
                 </ul>
+              </motion.div>
+              
+              {/* Service Area Section - SEO Enhancement */}
+              <motion.div 
+                className="bg-white border border-gray-200 rounded-lg shadow-md p-6 mt-4"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                <h3 className="text-xl font-heading font-semibold mb-4">
+                  {language === 'en' ? 'Our Service Areas' : 'Kawasan Perkhidmatan Kami'}
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  {language === 'en' 
+                    ? 'Proudly serving customers throughout:' 
+                    : 'Berbangga melayani pelanggan di seluruh:'}
+                </p>
+                <div className="grid grid-cols-2 gap-2 mb-4">
+                  <div className="flex items-center">
+                    <i className="fas fa-map-marker-alt text-primary mr-2"></i>
+                    <span>Klang</span>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="fas fa-map-marker-alt text-primary mr-2"></i>
+                    <span>Shah Alam</span>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="fas fa-map-marker-alt text-primary mr-2"></i>
+                    <span>Subang Jaya</span>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="fas fa-map-marker-alt text-primary mr-2"></i>
+                    <span>Port Klang</span>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="fas fa-map-marker-alt text-primary mr-2"></i>
+                    <span>Kapar</span>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="fas fa-map-marker-alt text-primary mr-2"></i>
+                    <span>Meru</span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-500">
+                  {language === 'en'
+                    ? 'And all surrounding areas in Selangor'
+                    : 'Dan semua kawasan sekitarnya di Selangor'
+                  }
+                </p>
               </motion.div>
             </div>
 
@@ -238,7 +287,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                 >
                   <i className="fab fa-whatsapp mr-2"></i>
-                  <span>{language === 'en' ? 'Chat Now: ' : 'Sembang Sekarang: '}{contactInfo.phone}</span>
+                  <span>{language === 'en' ? 'Chat Now: 017-295 2514' : 'Sembang Sekarang: 017-295 2514'}</span>
                 </a>
               </motion.div>
 
