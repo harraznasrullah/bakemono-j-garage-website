@@ -162,38 +162,74 @@ export const services = [
 export const galleryItems = [
   {
     id: 1,
-    title: "Vintage Car Restoration",
-    description: "Complete restoration of 1968 classic",
+    title: {
+      en: "Vintage Car Restoration",
+      ms: "Pemulihan Kereta Vintaj"
+    },
+    description: {
+      en: "Complete restoration of 1968 classic",
+      ms: "Pemulihan lengkap kereta klasik 1968"
+    },
     image: "https://images.unsplash.com/photo-1594148882817-7da01a9ab87f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
   },
   {
     id: 2,
-    title: "Engine Overhaul",
-    description: "Complete engine rebuild and tuning",
+    title: {
+      en: "Engine Overhaul",
+      ms: "Baik Pulih Enjin"
+    },
+    description: {
+      en: "Complete engine rebuild and tuning",
+      ms: "Pembinaan semula dan penalaan enjin yang lengkap"
+    },
     image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
   },
   {
     id: 3,
-    title: "Transmission Rebuild",
-    description: "Comprehensive transmission restoration",
+    title: {
+      en: "Transmission Rebuild",
+      ms: "Pembinaan Semula Transmisi"
+    },
+    description: {
+      en: "Comprehensive transmission restoration",
+      ms: "Pemulihan transmisi yang komprehensif"
+    },
     image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
   },
   {
     id: 4,
-    title: "Custom Paint Job",
-    description: "Premium metallic finish paint work",
+    title: {
+      en: "Custom Paint Job",
+      ms: "Kerja Cat Kustom"
+    },
+    description: {
+      en: "Premium metallic finish paint work",
+      ms: "Kerja cat kemasan metalik premium"
+    },
     image: "https://pixabay.com/get/g54126befb9533e61e67ee7a9035e6816f0b92648048beea56895926c6256a60e1bf5c925b67206b1bb4f43f9059ba8db915f493a37f4e0caa7b18b7f0702015b_1280.jpg"
   },
   {
     id: 5,
-    title: "Advanced Diagnostics",
-    description: "Computer-aided troubleshooting",
+    title: {
+      en: "Advanced Diagnostics",
+      ms: "Diagnostik Lanjutan"
+    },
+    description: {
+      en: "Computer-aided troubleshooting",
+      ms: "Penyelesaian masalah berbantukan komputer"
+    },
     image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
   },
   {
     id: 6,
-    title: "Our Service Bay",
-    description: "State-of-the-art repair facility",
+    title: {
+      en: "Our Service Bay",
+      ms: "Ruang Servis Kami"
+    },
+    description: {
+      en: "State-of-the-art repair facility",
+      ms: "Kemudahan pembaikan termaju"
+    },
     image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
   }
 ];
@@ -229,18 +265,36 @@ export const testimonials = [
 // Features
 export const features = [
   {
-    title: "Expert Mechanics",
-    description: "Our team has extensive experience with most makes and models, delivering quality repairs every time.",
+    title: {
+      en: "Expert Mechanics",
+      ms: "Mekanik Pakar"
+    },
+    description: {
+      en: "Our team has extensive experience with most makes and models, delivering quality repairs every time.",
+      ms: "Pasukan kami mempunyai pengalaman luas dengan kebanyakan jenis dan model kereta, memberikan pembaikan berkualiti setiap masa."
+    },
     icon: "fa-tools"
   },
   {
-    title: "Comprehensive Services",
-    description: "From basic oil changes to transmission rebuilding and vintage car restoration, we do it all.",
+    title: {
+      en: "Comprehensive Services",
+      ms: "Perkhidmatan Komprehensif"
+    },
+    description: {
+      en: "From basic oil changes to transmission rebuilding and vintage car restoration, we do it all.",
+      ms: "Dari penukaran minyak asas hingga pembinaan semula transmisi dan pemulihan kereta vintaj, kami melakukan semuanya."
+    },
     icon: "fa-car-alt"
   },
   {
-    title: "Affordable Rates",
-    description: "Quality automotive care doesn't have to break the bank. We offer competitive pricing on all services.",
+    title: {
+      en: "Affordable Rates",
+      ms: "Kadar Berpatutan"
+    },
+    description: {
+      en: "Quality automotive care doesn't have to break the bank. We offer competitive pricing on all services.",
+      ms: "Penjagaan automotif berkualiti tidak perlu mahal. Kami menawarkan harga yang kompetitif untuk semua perkhidmatan."
+    },
     icon: "fa-hand-holding-usd"
   }
 ];

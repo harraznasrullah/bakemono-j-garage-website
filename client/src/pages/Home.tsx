@@ -82,8 +82,12 @@ const Home = () => {
                 <div className="feature-icon">
                   <i className={`fas ${feature.icon}`}></i>
                 </div>
-                <h3 className="text-xl font-heading font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-heading font-semibold mb-2">
+                  {language === 'en' ? feature.title.en : feature.title.ms}
+                </h3>
+                <p className="text-gray-600">
+                  {language === 'en' ? feature.description.en : feature.description.ms}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -209,10 +213,18 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
               >
-                <img src={item.image} alt={item.title} className="w-full h-64 object-cover" />
+                <img 
+                  src={item.image} 
+                  alt={language === 'en' ? item.title.en : item.title.ms} 
+                  className="w-full h-64 object-cover" 
+                />
                 <div className="p-4 bg-white">
-                  <h4 className="font-heading font-medium">{item.title}</h4>
-                  <p className="text-sm text-gray-600">{item.description}</p>
+                  <h4 className="font-heading font-medium">
+                    {language === 'en' ? item.title.en : item.title.ms}
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    {language === 'en' ? item.description.en : item.description.ms}
+                  </p>
                 </div>
               </motion.div>
             ))}
