@@ -9,6 +9,7 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import SocialFeed from "@/pages/SocialFeed";
 import Layout from "@/components/Layout";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 function Router() {
   return (
@@ -26,12 +27,14 @@ function Router() {
 
 function App() {
   return (
-    <TooltipProvider>
-      <Toaster />
-      <Layout>
-        <Router />
-      </Layout>
-    </TooltipProvider>
+    <LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Layout>
+          <Router />
+        </Layout>
+      </TooltipProvider>
+    </LanguageProvider>
   );
 }
 
