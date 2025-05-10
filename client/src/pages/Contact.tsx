@@ -310,7 +310,7 @@ const Contact = () => {
                 <iframe 
                   title="Bakemono J Garage Workshop Location"
                   className="w-full h-full border-0"
-                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY || "AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE"}&q=${encodeURIComponent(contactInfo.mapLocation)}`}
+                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&q=${encodeURIComponent(contactInfo.mapLocation)}`}
                   allowFullScreen
                 ></iframe>
               </motion.div>

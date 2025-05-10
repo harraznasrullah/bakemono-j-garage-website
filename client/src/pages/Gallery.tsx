@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { Link } from "wouter";
 import { galleryItems } from "@/lib/constants";
 
@@ -53,6 +53,7 @@ const Gallery = () => {
                   </motion.div>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-4xl">
+                  <DialogTitle className="sr-only">{item.title}</DialogTitle>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="rounded-lg overflow-hidden">
                       <img src={item.image} alt={item.title} className="w-full h-auto" />
