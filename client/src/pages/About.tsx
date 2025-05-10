@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { testimonials } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { language, t } = useLanguage();
+  
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -20,9 +23,14 @@ const About = () => {
             animate="visible"
             variants={fadeIn}
           >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">About Bakemono J Garage Workshop</h1>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
+              {t('about.hero.title')}
+            </h1>
             <p className="text-xl text-white/80 mb-8">
-              One of Malaysia's most recognized automotive repair centers
+              {language === 'en'
+                ? 'One of Malaysia\'s most recognized automotive repair centers'
+                : 'Salah satu pusat pembaikan automotif yang paling diiktiraf di Malaysia'
+              }
             </p>
           </motion.div>
         </div>
@@ -38,39 +46,50 @@ const About = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="mb-10">
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Our Story</h2>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                  {language === 'en' ? 'Our Story' : 'Kisah Kami'}
+                </h2>
                 <p className="text-gray-600 mb-4">
-                  Established in Klang, Selangor, Bakemono J Garage Workshop has built a reputation as one of the most trusted automotive repair centers in Malaysia. Our recognition as one of the "TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020" reflects our commitment to excellence.
+                  {language === 'en'
+                    ? 'Established in Klang, Selangor, Bakemono J Garage Workshop has built a reputation as one of the most trusted automotive repair centers in Malaysia. Our recognition as one of the "TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020" reflects our commitment to excellence.'
+                    : 'Ditubuhkan di Klang, Selangor, Bakemono J Garage Workshop telah membina reputasi sebagai salah satu pusat pembaikan automotif yang paling dipercayai di Malaysia. Pengiktirafan kami sebagai salah satu "10 MEKANIK YANG PALING DIKENALI DI MALAYSIA 2020" mencerminkan komitmen kami terhadap kecemerlangan.'
+                  }
                 </p>
                 <p className="text-gray-600 mb-4">
-                  Our team of skilled mechanics has extensive experience with most make and model cars, from everyday vehicles to vintage classics. We pride ourselves on providing affordable, high-quality service with a focus on customer satisfaction.
+                  {language === 'en'
+                    ? 'Our team of skilled mechanics has extensive experience with most make and model cars, from everyday vehicles to vintage classics. We pride ourselves on providing affordable, high-quality service with a focus on customer satisfaction.'
+                    : 'Pasukan mekanik mahir kami mempunyai pengalaman luas dengan kebanyakan jenis dan model kereta, dari kenderaan harian hingga klasik vintaj. Kami berbangga menyediakan perkhidmatan berkualiti tinggi dengan harga berpatutan dan tumpuan kepada kepuasan pelanggan.'
+                  }
                 </p>
                 <p className="text-gray-600">
-                  Whether you need routine maintenance, complex repairs, or vintage car restoration, we have the expertise and equipment to get the job done right.
+                  {language === 'en'
+                    ? 'Whether you need routine maintenance, complex repairs, or vintage car restoration, we have the expertise and equipment to get the job done right.'
+                    : 'Sama ada anda memerlukan penyelenggaraan rutin, pembaikan kompleks, atau pemulihan kereta vintaj, kami mempunyai kepakaran dan peralatan untuk menyelesaikan tugas dengan betul.'
+                  }
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-start">
                   <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
-                  <span>Experienced mechanics</span>
+                  <span>{language === 'en' ? 'Experienced mechanics' : 'Mekanik berpengalaman'}</span>
                 </div>
                 <div className="flex items-start">
                   <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
-                  <span>Quality parts</span>
+                  <span>{language === 'en' ? 'Quality parts' : 'Alat ganti berkualiti'}</span>
                 </div>
                 <div className="flex items-start">
                   <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
-                  <span>Fair pricing</span>
+                  <span>{language === 'en' ? 'Fair pricing' : 'Harga berpatutan'}</span>
                 </div>
                 <div className="flex items-start">
                   <i className="fas fa-check-circle text-success mt-1 mr-2 text-xl"></i>
-                  <span>Modern equipment</span>
+                  <span>{language === 'en' ? 'Modern equipment' : 'Peralatan moden'}</span>
                 </div>
               </div>
 
               <Link href="/contact" className="btn-primary inline-flex items-center justify-center">
-                Contact Us
+                {language === 'en' ? 'Contact Us' : 'Hubungi Kami'}
               </Link>
             </motion.div>
 
@@ -113,9 +132,14 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">Our Values</h2>
+            <h2 className="section-title">
+              {language === 'en' ? 'Our Values' : 'Nilai-Nilai Kami'}
+            </h2>
             <p className="section-subtitle">
-              These principles guide everything we do at Bakemono J Garage Workshop
+              {language === 'en'
+                ? 'These principles guide everything we do at Bakemono J Garage Workshop'
+                : 'Prinsip-prinsip ini memandu semua yang kami lakukan di Bakemono J Garage Workshop'
+              }
             </p>
           </motion.div>
 

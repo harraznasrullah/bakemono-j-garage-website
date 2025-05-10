@@ -183,7 +183,13 @@ const SocialFeed = () => {
                     title="TikTok Feed"
                   ></iframe>
                   <p className="text-center text-gray-500 mt-4">
-                    For more videos, visit our <a href={contactInfo.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-primary font-medium">TikTok profile</a>
+                    {language === 'en' 
+                      ? 'For more videos, visit our '
+                      : 'Untuk lebih banyak video, lawati '
+                    }
+                    <a href={contactInfo.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-primary font-medium">
+                      {language === 'en' ? 'TikTok profile' : 'profil TikTok kami'}
+                    </a>
                   </p>
                 </div>
               </div>
@@ -200,12 +206,14 @@ const SocialFeed = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Connect With Us Today</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">
+              {t('social.connect')}
+            </h2>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Have a question about your vehicle? Need to schedule a service appointment?
+              {t('social.question')}
             </p>
             <Link href="/contact" className="btn-accent inline-flex items-center justify-center">
-              <i className="fas fa-comments mr-2"></i> Contact Us
+              <i className="fas fa-comments mr-2"></i> {t('common.contactUs')}
             </Link>
           </motion.div>
         </div>
