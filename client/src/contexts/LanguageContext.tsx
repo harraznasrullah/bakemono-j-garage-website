@@ -38,7 +38,7 @@ const enTranslations: Record<string, string> = {
   'services.cta': 'Contact Us',
   
   // About page
-  'about.hero.title': 'About Us',
+  'about.hero.title': 'About Bakemono J Garage Workshop',
   'about.hero.subtitle': 'Your trusted automotive care partner in Klang',
   'about.mission.title': 'Our Mission',
   'about.mission.description': 'To provide high-quality automotive service with honesty and integrity.',
@@ -46,6 +46,14 @@ const enTranslations: Record<string, string> = {
   'about.vision.description': 'To be the most trusted automotive workshop in Klang, known for our expertise and reliability.',
   'about.history.title': 'Our History',
   'about.history.description': 'Established with a passion for cars, we\'ve been serving the Klang community with expert automotive care.',
+  'about.story.title': 'Our Story',
+  'about.values.title': 'Our Values',
+  'about.values.subtitle': 'These principles guide everything we do at Bakemono J Garage Workshop',
+  'about.team.title': 'Our Expert Team',
+  'about.team.subtitle': 'Meet the skilled professionals behind our quality service',
+  'about.cta.title': 'Ready to Experience Our Expert Service?',
+  'about.cta.subtitle': 'Join our community of satisfied customers and trust your vehicle with Malaysia\'s top recognized mechanics',
+  'about.cta.button': 'Book an Appointment',
   
   // Gallery page
   'gallery.hero.title': 'Our Gallery',
@@ -127,7 +135,7 @@ const msTranslations: Record<string, string> = {
   'services.cta': 'Hubungi Kami',
   
   // About page
-  'about.hero.title': 'Tentang Kami',
+  'about.hero.title': 'Tentang Bakemono J Garage Workshop',
   'about.hero.subtitle': 'Rakan penjagaan automotif yang dipercayai di Klang',
   'about.mission.title': 'Misi Kami',
   'about.mission.description': 'Untuk menyediakan perkhidmatan automotif berkualiti tinggi dengan kejujuran dan integriti.',
@@ -135,6 +143,14 @@ const msTranslations: Record<string, string> = {
   'about.vision.description': 'Untuk menjadi bengkel automotif yang paling dipercayai di Klang, dikenali dengan kepakaran dan kebolehpercayaan kami.',
   'about.history.title': 'Sejarah Kami',
   'about.history.description': 'Ditubuhkan dengan semangat untuk kereta, kami telah melayani masyarakat Klang dengan penjagaan automotif pakar.',
+  'about.story.title': 'Kisah Kami',
+  'about.values.title': 'Nilai-Nilai Kami',
+  'about.values.subtitle': 'Prinsip-prinsip ini memandu semua yang kami lakukan di Bakemono J Garage Workshop',
+  'about.team.title': 'Pasukan Pakar Kami',
+  'about.team.subtitle': 'Kenali profesional mahir di sebalik perkhidmatan berkualiti kami',
+  'about.cta.title': 'Bersedia Untuk Mengalami Perkhidmatan Pakar Kami?',
+  'about.cta.subtitle': 'Sertai komuniti pelanggan kami yang berpuas hati dan percayakan kenderaan anda dengan mekanik terkenal di Malaysia',
+  'about.cta.button': 'Tempah Temujanji',
   
   // Gallery page
   'gallery.hero.title': 'Galeri Kami',

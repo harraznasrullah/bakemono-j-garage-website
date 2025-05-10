@@ -27,10 +27,7 @@ const About = () => {
               {t('about.hero.title')}
             </h1>
             <p className="text-xl text-white/80 mb-8">
-              {language === 'en'
-                ? 'One of Malaysia\'s most recognized automotive repair centers'
-                : 'Salah satu pusat pembaikan automotif yang paling diiktiraf di Malaysia'
-              }
+              {t('about.hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -47,7 +44,7 @@ const About = () => {
             >
               <div className="mb-10">
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-                  {language === 'en' ? 'Our Story' : 'Kisah Kami'}
+                  {t('about.story.title')}
                 </h2>
                 <p className="text-gray-600 mb-4">
                   {language === 'en'
@@ -146,18 +143,24 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Quality",
-                description: "We never compromise on the quality of our work or the parts we use. Every repair and service is performed to the highest standards.",
+                title: language === 'en' ? "Quality" : "Kualiti",
+                description: language === 'en' 
+                  ? "We never compromise on the quality of our work or the parts we use. Every repair and service is performed to the highest standards."
+                  : "Kami tidak pernah berkompromi dengan kualiti kerja kami atau alat ganti yang kami gunakan. Setiap pembaikan dan servis dilakukan mengikut standard tertinggi.",
                 icon: "fa-award"
               },
               {
-                title: "Honesty",
-                description: "We believe in transparent communication and honest assessments. We'll always tell you exactly what your vehicle needs without unnecessary work.",
+                title: language === 'en' ? "Honesty" : "Kejujuran",
+                description: language === 'en'
+                  ? "We believe in transparent communication and honest assessments. We'll always tell you exactly what your vehicle needs without unnecessary work."
+                  : "Kami percaya kepada komunikasi yang telus dan penilaian yang jujur. Kami akan sentiasa memberitahu anda secara tepat apa yang diperlukan oleh kenderaan anda tanpa kerja yang tidak perlu.",
                 icon: "fa-handshake"
               },
               {
-                title: "Customer Satisfaction",
-                description: "Your satisfaction is our priority. We strive to exceed expectations with every visit, ensuring your vehicle receives the best care possible.",
+                title: language === 'en' ? "Customer Satisfaction" : "Kepuasan Pelanggan",
+                description: language === 'en'
+                  ? "Your satisfaction is our priority. We strive to exceed expectations with every visit, ensuring your vehicle receives the best care possible."
+                  : "Kepuasan anda adalah keutamaan kami. Kami berusaha untuk melebihi jangkaan dengan setiap kunjungan, memastikan kenderaan anda menerima penjagaan terbaik yang mungkin.",
                 icon: "fa-smile"
               }
             ].map((value, index) => (
@@ -188,9 +191,14 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">Our Expert Team</h2>
+            <h2 className="section-title">
+              {language === 'en' ? 'Our Expert Team' : 'Pasukan Pakar Kami'}
+            </h2>
             <p className="section-subtitle">
-              Meet the skilled professionals behind our quality service
+              {language === 'en'
+                ? 'Meet the skilled professionals behind our quality service'
+                : 'Kenali profesional mahir di sebalik perkhidmatan berkualiti kami'
+              }
             </p>
           </motion.div>
 
@@ -198,20 +206,26 @@ const About = () => {
             {[
               {
                 name: "Ali Hassan",
-                role: "Master Mechanic",
-                bio: "With over 15 years of experience, Ali specializes in diagnosing complex automotive issues and vintage car restoration.",
+                role: language === 'en' ? "Master Mechanic" : "Mekanik Utama",
+                bio: language === 'en'
+                  ? "With over 15 years of experience, Ali specializes in diagnosing complex automotive issues and vintage car restoration."
+                  : "Dengan pengalaman lebih 15 tahun, Ali pakar dalam mendiagnosis masalah automotif kompleks dan pemulihan kereta vintaj.",
                 image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
               },
               {
                 name: "Michael Tan",
-                role: "Service Manager",
-                bio: "Michael ensures that every service meets our high standards of quality. He has a background in automotive engineering.",
+                role: language === 'en' ? "Service Manager" : "Pengurus Perkhidmatan",
+                bio: language === 'en'
+                  ? "Michael ensures that every service meets our high standards of quality. He has a background in automotive engineering."
+                  : "Michael memastikan setiap perkhidmatan memenuhi standard kualiti tinggi kami. Beliau mempunyai latar belakang dalam kejuruteraan automotif.",
                 image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
               },
               {
                 name: "Raj Singh",
-                role: "Diagnostics Specialist",
-                bio: "Raj is our expert in computer diagnostics and electrical systems, with specialized training in hybrid vehicle technology.",
+                role: language === 'en' ? "Diagnostics Specialist" : "Pakar Diagnostik",
+                bio: language === 'en'
+                  ? "Raj is our expert in computer diagnostics and electrical systems, with specialized training in hybrid vehicle technology."
+                  : "Raj adalah pakar kami dalam diagnostik komputer dan sistem elektrik, dengan latihan khusus dalam teknologi kenderaan hibrid.",
                 image: "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
               }
             ].map((member, index) => (
@@ -254,10 +268,16 @@ const About = () => {
             </div>
             <blockquote className="text-center mb-8">
               <p className="text-gray-600 text-lg md:text-xl italic mb-6">
-                "I have been bringing all my vehicles to Bakemono J Garage for years. They are simply the best in the Klang Valley area. Their attention to detail and technical expertise has saved me from costly repairs numerous times. I wouldn't trust my cars with anyone else."
+                {language === 'en'
+                  ? '"I have been bringing all my vehicles to Bakemono J Garage for years. They are simply the best in the Klang Valley area. Their attention to detail and technical expertise has saved me from costly repairs numerous times. I wouldn\'t trust my cars with anyone else."'
+                  : '"Saya telah membawa semua kenderaan saya ke Bakemono J Garage selama bertahun-tahun. Mereka adalah yang terbaik di kawasan Lembah Klang. Perhatian mereka terhadap perincian dan kepakaran teknikal telah menyelamatkan saya daripada pembaikan mahal beberapa kali. Saya tidak akan mempercayai kereta saya dengan orang lain."'
+                }
               </p>
               <cite className="text-gray-800 font-medium not-italic">
-                — David Wong, Loyal Customer Since 2015
+                {language === 'en'
+                  ? '— David Wong, Loyal Customer Since 2015'
+                  : '— David Wong, Pelanggan Setia Sejak 2015'
+                }
               </cite>
             </blockquote>
           </motion.div>
@@ -272,12 +292,21 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Ready to Experience Our Expert Service?</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">
+              {language === 'en'
+                ? 'Ready to Experience Our Expert Service?'
+                : 'Bersedia Untuk Mengalami Perkhidmatan Pakar Kami?'
+              }
+            </h2>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Join our community of satisfied customers and trust your vehicle with Malaysia's top recognized mechanics.
+              {language === 'en'
+                ? 'Join our community of satisfied customers and trust your vehicle with Malaysia\'s top recognized mechanics.'
+                : 'Sertai komuniti pelanggan kami yang berpuas hati dan percayakan kenderaan anda dengan mekanik terkenal di Malaysia.'
+              }
             </p>
             <Link href="/contact" className="btn-accent inline-flex items-center justify-center">
-              <i className="fas fa-calendar-alt mr-2"></i> Book an Appointment
+              <i className="fas fa-calendar-alt mr-2"></i> 
+              {language === 'en' ? 'Book an Appointment' : 'Tempah Temujanji'}
             </Link>
           </motion.div>
         </div>
