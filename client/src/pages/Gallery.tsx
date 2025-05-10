@@ -10,8 +10,14 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<{
     id: number;
     image: string;
-    title: string;
-    description: string;
+    title: {
+      en: string;
+      ms: string;
+    };
+    description: {
+      en: string;
+      ms: string;
+    };
   } | null>(null);
 
   return (
@@ -52,30 +58,55 @@ const Gallery = () => {
                     transition={{ delay: index * 0.1 }}
                     onClick={() => setSelectedImage(item)}
                   >
-                    <img src={item.image} alt={item.title} className="w-full h-64 object-cover" />
+                    <img 
+                      src={item.image} 
+                      alt={language === 'en' ? item.title.en : item.title.ms} 
+                      className="w-full h-64 object-cover" 
+                    />
                     <div className="p-4 bg-white">
-                      <h4 className="font-heading font-medium">{item.title}</h4>
-                      <p className="text-sm text-gray-600">{item.description}</p>
+                      <h4 className="font-heading font-medium">
+                        {language === 'en' ? item.title.en : item.title.ms}
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        {language === 'en' ? item.description.en : item.description.ms}
+                      </p>
                     </div>
                   </motion.div>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-4xl">
-                  <DialogTitle className="sr-only">{item.title}</DialogTitle>
+                  <DialogTitle className="sr-only">
+                    {language === 'en' ? item.title.en : item.title.ms}
+                  </DialogTitle>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="rounded-lg overflow-hidden">
-                      <img src={item.image} alt={item.title} className="w-full h-auto" />
+                      <img 
+                        src={item.image} 
+                        alt={language === 'en' ? item.title.en : item.title.ms} 
+                        className="w-full h-auto" 
+                      />
                     </div>
                     <div className="p-4">
-                      <h3 className="text-2xl font-heading font-bold mb-4">{item.title}</h3>
-                      <p className="text-gray-600 mb-6">{item.description}</p>
+                      <h3 className="text-2xl font-heading font-bold mb-4">
+                        {language === 'en' ? item.title.en : item.title.ms}
+                      </h3>
+                      <p className="text-gray-600 mb-6">
+                        {language === 'en' ? item.description.en : item.description.ms}
+                      </p>
                       <div className="space-y-4">
-                        <h4 className="font-medium">Project Details:</h4>
+                        <h4 className="font-medium">
+                          {language === 'en' ? 'Project Details:' : 'Butiran Projek:'}
+                        </h4>
                         <p className="text-gray-600">
-                          This is one of our showcase projects that demonstrates our expertise and attention to detail. 
-                          Our skilled mechanics put their years of experience to work, ensuring quality results.
+                          {language === 'en' 
+                            ? 'This is one of our showcase projects that demonstrates our expertise and attention to detail. Our skilled mechanics put their years of experience to work, ensuring quality results.'
+                            : 'Ini adalah salah satu projek pameran kami yang menunjukkan kepakaran dan perhatian kami terhadap detail. Mekanik kami yang mahir memanfaatkan pengalaman bertahun-tahun mereka, memastikan hasil yang berkualiti.'
+                          }
                         </p>
                         <p className="text-gray-600">
-                          We pride ourselves on using quality parts and advanced techniques to deliver exceptional results for every vehicle we work on.
+                          {language === 'en'
+                            ? 'We pride ourselves on using quality parts and advanced techniques to deliver exceptional results for every vehicle we work on.'
+                            : 'Kami berbangga menggunakan alat ganti berkualiti dan teknik termaju untuk memberikan hasil yang luar biasa bagi setiap kenderaan yang kami kerjakan.'
+                          }
                         </p>
                       </div>
                     </div>
