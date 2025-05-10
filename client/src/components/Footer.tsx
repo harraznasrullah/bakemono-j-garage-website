@@ -120,10 +120,15 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Bakemono J Garage Workshop. All rights reserved.
-            </p>
+          <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row justify-between items-center">
+            <div className="flex flex-col items-center md:items-start">
+              <p className="text-gray-500 mb-2 md:mb-1">
+                &copy; {new Date().getFullYear()} Bakemono J Garage Workshop. All rights reserved.
+              </p>
+              <p className="text-gray-500 text-sm">
+                Serving Klang, Shah Alam, Subang Jaya, and nearby areas.
+              </p>
+            </div>
             <div className="flex space-x-4">
               <Link href="/privacy-policy" className="text-gray-500 hover:text-accent transition duration-200">
                 Privacy Policy

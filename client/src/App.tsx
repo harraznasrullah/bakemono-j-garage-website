@@ -10,6 +10,7 @@ import Contact from "@/pages/Contact";
 import SocialFeed from "@/pages/SocialFeed";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import OilChange from "@/pages/services/OilChange";
 import Layout from "@/components/Layout";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
@@ -18,6 +19,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
+      <Route path="/services/oil-change" component={OilChange} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />

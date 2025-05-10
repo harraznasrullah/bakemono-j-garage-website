@@ -2,8 +2,12 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { features, services, testimonials, galleryItems, contactInfo } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Home = () => {
+  // Get language context
+  const { t, language } = useLanguage();
+  
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -28,13 +32,22 @@ const Home = () => {
               variants={fadeIn}
             >
               <div className="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-medium mb-4 relative z-10">
-                TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020
+                {language === 'en' 
+                  ? 'TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020'
+                  : 'MEKANIK TERATAS 10 PALING DIIKTIRAF DI MALAYSIA 2020'
+                }
               </div>
               <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">
-                Expert Auto Repair & Maintenance Services
+                {language === 'en'
+                  ? 'Expert Auto Repair & Maintenance Services'
+                  : 'Servis Pembaikan & Penyelenggaraan Auto Pakar'
+                }
               </h2>
               <p className="text-base md:text-lg mb-8 text-gray-100">
-                Quality and functionality guaranteed. We specialize in general repairs, vintage car restoration, and comprehensive maintenance services.
+                {language === 'en'
+                  ? 'Quality and functionality guaranteed. We specialize in general repairs, vintage car restoration, and comprehensive maintenance services.'
+                  : 'Kualiti dan fungsi dijamin. Kami mengkhususkan diri dalam pembaikan umum, pemulihan kereta vintage, dan perkhidmatan penyelenggaraan komprehensif.'
+                }
               </p>
               <div className="flex flex-col md:flex-row w-full md:w-auto gap-4 md:gap-0 md:space-x-4">
                 <a 
