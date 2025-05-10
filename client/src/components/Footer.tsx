@@ -1,14 +1,17 @@
 import { Link } from "wouter";
 import { contactInfo, services } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   const quickLinks = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/about", label: "About Us" },
-    { href: "/social", label: "Social Media" },
-    { href: "/contact", label: "Contact" }
+    { href: "/", label: t('nav.home') },
+    { href: "/services", label: t('nav.services') },
+    { href: "/gallery", label: t('nav.gallery') },
+    { href: "/about", label: t('nav.about') },
+    { href: "/social", label: t('nav.social') },
+    { href: "/contact", label: t('nav.contact') }
   ];
 
   return (
@@ -20,7 +23,7 @@ const Footer = () => {
               <span className="text-accent">BAKEMONO</span> J'GARAGE
             </h3>
             <p className="text-gray-400 mb-6">
-              Your trusted automotive care partner in Klang, Selangor. Quality and functionality guaranteed.
+              {t('home.about.description')}
             </p>
             <div className="flex space-x-4">
               <a 
@@ -63,7 +66,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-heading font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-heading font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -79,7 +82,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-heading font-semibold mb-4">Services</h4>
+            <h4 className="text-lg font-heading font-semibold mb-4">{t('footer.services')}</h4>
             <ul className="space-y-2">
               {services.slice(0, 5).map((service) => (
                 <li key={service.id}>

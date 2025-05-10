@@ -180,18 +180,21 @@ const Contact = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
-                <h3 className="text-xl font-heading font-semibold mb-4">Book an Appointment</h3>
-                <p className="mb-4">
-                  Need quick service? Message us directly on WhatsApp to book your appointment.
-                </p>
-                <a 
-                  href={contactInfo.social.whatsapp} 
-                  className="btn-accent inline-flex items-center justify-center w-full"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp Booking: {contactInfo.phone}
-                </a>
+                <h3 className="text-xl font-heading font-semibold mb-4">Business Hours</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <i className="far fa-clock mr-3 text-accent"></i>
+                    <span>{contactInfo.hours.hq}</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="far fa-building mr-3 text-accent"></i>
+                    <span>{contactInfo.hours.shell}</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-calendar-times mr-3 text-accent"></i>
+                    <span>{contactInfo.hours.closed}</span>
+                  </li>
+                </ul>
               </motion.div>
             </div>
 

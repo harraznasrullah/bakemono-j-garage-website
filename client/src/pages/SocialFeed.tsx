@@ -146,20 +146,24 @@ const SocialFeed = () => {
                 </h3>
               </div>
               <div className="h-[700px] overflow-auto p-4 bg-white">
-                <blockquote 
-                  className="tiktok-embed mb-4" 
-                  cite="https://www.tiktok.com/@bakemonojgarage" 
-                  data-unique-id="bakemonojgarage"
-                  data-embed-type="creator" 
-                  style={{ maxWidth: '100%' }}
-                >
-                  <section>
-                    <a target="_blank" href="https://www.tiktok.com/@bakemonojgarage?refer=creator_embed" rel="noreferrer">@bakemonojgarage</a>
-                  </section>
-                </blockquote>
-                <p className="text-center text-gray-500 mt-4">
-                  For more videos, visit our <a href={contactInfo.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-primary font-medium">TikTok profile</a>
-                </p>
+                <div className="flex flex-col items-center">
+                  <iframe 
+                    src="https://www.tiktok.com/embed/v2/@bakemonojgarage" 
+                    style={{ 
+                      width: '100%', 
+                      height: '600px', 
+                      border: 'none',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                    }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="TikTok Feed"
+                  ></iframe>
+                  <p className="text-center text-gray-500 mt-4">
+                    For more videos, visit our <a href={contactInfo.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-primary font-medium">TikTok profile</a>
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
