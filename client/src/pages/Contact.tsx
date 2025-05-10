@@ -99,6 +99,41 @@ const Contact = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1">
+              {/* WhatsApp Contact Box - Moved to the top for mobile */}
+              <motion.div
+                className="bg-green-600 text-white rounded-lg shadow-md p-4 mb-8"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex flex-col sm:flex-row justify-between items-center">
+                  <div className="flex items-center mb-4 sm:mb-0">
+                    <i className="fab fa-whatsapp text-3xl mr-3"></i>
+                    <div>
+                      <h3 className="text-lg font-medium">
+                        {language === 'en' ? 'Contact Us on WhatsApp' : 'Hubungi Kami di WhatsApp'}
+                      </h3>
+                      <p className="text-white/90 text-sm">
+                        {language === 'en' 
+                          ? 'Fast response for inquiries and appointments' 
+                          : 'Respons cepat untuk pertanyaan dan temujanji'
+                        }
+                      </p>
+                    </div>
+                  </div>
+                  <a 
+                    href={contactInfo.social.whatsapp} 
+                    className="bg-white text-green-600 hover:bg-gray-100 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center w-full sm:w-auto justify-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-whatsapp mr-2"></i>
+                    <span>{language === 'en' ? 'Chat Now: 017-295 2514' : 'Sembang Sekarang: 017-295 2514'}</span>
+                  </a>
+                </div>
+              </motion.div>
+              
+              {/* Contact Information Box */}
               <motion.div 
                 className="bg-white rounded-lg shadow-md p-6 mb-8"
                 initial={{ opacity: 0, x: -20 }}
@@ -259,37 +294,6 @@ const Contact = () => {
             </div>
 
             <div className="lg:col-span-2">
-              {/* WhatsApp Contact Bar */}
-              <motion.div
-                className="bg-green-600 text-white rounded-lg shadow-md p-4 mb-4 flex flex-col md:flex-row justify-between items-center"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="flex items-center mb-4 md:mb-0">
-                  <i className="fab fa-whatsapp text-3xl mr-3"></i>
-                  <div>
-                    <h3 className="text-lg font-medium">
-                      {language === 'en' ? 'Contact Us on WhatsApp' : 'Hubungi Kami di WhatsApp'}
-                    </h3>
-                    <p className="text-white/90 text-sm">
-                      {language === 'en' 
-                        ? 'Fast response for inquiries and appointments' 
-                        : 'Respons cepat untuk pertanyaan dan temujanji'
-                      }
-                    </p>
-                  </div>
-                </div>
-                <a 
-                  href={contactInfo.social.whatsapp} 
-                  className="bg-white text-green-600 hover:bg-gray-100 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center w-full md:w-auto justify-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-whatsapp mr-2"></i>
-                  <span>{language === 'en' ? 'Chat Now: 017-295 2514' : 'Sembang Sekarang: 017-295 2514'}</span>
-                </a>
-              </motion.div>
 
               <motion.div 
                 className="bg-white rounded-lg shadow-md p-6 mb-8"

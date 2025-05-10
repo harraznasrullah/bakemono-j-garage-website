@@ -70,20 +70,22 @@ const Header = () => {
         {/* Mobile Menu (Hidden by default) */}
         {isMobile && (
           <div className={`md:hidden py-4 border-t border-gray-200 ${mobileMenuOpen ? "block" : "hidden"}`}>
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col">
               {navLinks.map((link) => (
                 <Link 
                   key={link.href} 
                   href={link.href}
-                  className={`font-medium transition duration-200 ${
-                    location === link.href ? "text-accent" : "hover:text-accent"
+                  className={`font-medium py-3 px-2 transition duration-200 ${
+                    location === link.href 
+                      ? "text-accent border-l-4 border-accent pl-3" 
+                      : "hover:text-accent hover:bg-gray-50"
                   }`}
                   onClick={closeMobileMenu}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-3 mt-3 border-t border-gray-200">
+              <div className="pt-4 mt-2 border-t border-gray-200 px-2">
                 <LanguageSwitcher />
               </div>
             </div>

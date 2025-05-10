@@ -15,20 +15,21 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-neutral-dark text-white pt-16 pb-8">
+    <footer className="bg-neutral-dark text-white pt-10 md:pt-16 pb-6 md:pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 md:mb-12">
+          {/* Brand Column - Full width on smallest screens */}
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1 mb-6 sm:mb-0">
             <h3 className="text-xl font-heading font-bold mb-4">
               <span className="text-accent">BAKEMONO</span> J'GARAGE
             </h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-6 text-sm md:text-base max-w-md">
               {t('home.about.description')}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               <a 
                 href={contactInfo.social.facebook} 
-                className="text-gray-400 hover:text-accent transition duration-200"
+                className="text-gray-400 hover:text-accent transition duration-200 text-lg"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -37,7 +38,7 @@ const Footer = () => {
               </a>
               <a 
                 href={contactInfo.social.instagram} 
-                className="text-gray-400 hover:text-accent transition duration-200"
+                className="text-gray-400 hover:text-accent transition duration-200 text-lg"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -46,7 +47,7 @@ const Footer = () => {
               </a>
               <a 
                 href={contactInfo.social.tiktok} 
-                className="text-gray-400 hover:text-accent transition duration-200"
+                className="text-gray-400 hover:text-accent transition duration-200 text-lg"
                 aria-label="TikTok"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -55,7 +56,7 @@ const Footer = () => {
               </a>
               <a 
                 href={contactInfo.social.whatsapp} 
-                className="text-gray-400 hover:text-accent transition duration-200"
+                className="text-gray-400 hover:text-accent transition duration-200 text-lg"
                 aria-label="WhatsApp"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -65,14 +66,15 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
+          {/* Quick Links - Better touch targets */}
+          <div className="col-span-1">
             <h4 className="text-lg font-heading font-semibold mb-4">{t('footer.quickLinks')}</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href} 
-                    className="text-gray-400 hover:text-accent transition duration-200"
+                    className="text-gray-400 hover:text-accent transition duration-200 block py-1"
                   >
                     {link.label}
                   </Link>
@@ -81,14 +83,15 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
+          {/* Services - Better touch targets */}
+          <div className="col-span-1">
             <h4 className="text-lg font-heading font-semibold mb-4">{t('footer.services')}</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {services.slice(0, 5).map((service) => (
                 <li key={service.id}>
                   <Link 
                     href={`/services#${service.id}`} 
-                    className="text-gray-400 hover:text-accent transition duration-200"
+                    className="text-gray-400 hover:text-accent transition duration-200 block py-1"
                   >
                     {language === 'en' ? service.title.en : service.title.ms}
                   </Link>
@@ -97,22 +100,25 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
-            <h4 className="text-lg font-heading font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-3">
+          {/* Contact Info - Improved readability */}
+          <div className="col-span-1">
+            <h4 className="text-lg font-heading font-semibold mb-4">
+              {language === 'en' ? 'Contact Info' : 'Maklumat Hubungan'}
+            </h4>
+            <ul className="space-y-4">
               <li className="flex items-start">
                 <i className="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
-                <span className="text-gray-400">{contactInfo.address}</span>
+                <span className="text-gray-400 text-sm md:text-base">{contactInfo.address}</span>
               </li>
               <li className="flex items-start">
                 <i className="fas fa-phone-alt mt-1 mr-3 text-accent"></i>
-                <span className="text-gray-400">{contactInfo.phoneNote}</span>
+                <span className="text-gray-400 text-sm md:text-base">{contactInfo.phoneNote}</span>
               </li>
               <li className="flex items-start">
                 <i className="far fa-clock mt-1 mr-3 text-accent"></i>
-                <span className="text-gray-400">
+                <span className="text-gray-400 text-sm md:text-base">
                   {contactInfo.hours.hq}<br />
-                  {contactInfo.hours.closed}
+                  {language === 'en' ? contactInfo.hours.closed : 'Tutup: Ahad'}
                 </span>
               </li>
             </ul>
