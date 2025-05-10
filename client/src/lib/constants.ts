@@ -249,7 +249,7 @@ export const features = [
 export const contactInfo = {
   address: "Lot 5624/2, Jalan Bakti, Batu 3, Jalan Shahpadu Off Jalan Kapar, 42100 Klang, Selangor, Malaysia",
   phone: "(+60) 017-295 2514",
-  phoneNote: "Call or WhatsApp at (+60) 017-295 2514 for inquiries and appointments",
+  phoneNote: "Call or WhatsApp for inquiries: 017-295 2514",
   hours: {
     hq: "9 AM – 6 PM (HQ)",
     closed: "Closed on Fridays"
