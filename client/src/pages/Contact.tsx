@@ -47,16 +47,20 @@ const Contact = () => {
     },
     onSuccess: () => {
       toast({
-        title: "Message Sent",
-        description: "Thank you for your message. We'll get back to you soon!",
+        title: language === 'en' ? "Message Sent" : "Mesej Dihantar",
+        description: language === 'en' 
+          ? "Thank you for your message. We'll get back to you soon!" 
+          : "Terima kasih atas mesej anda. Kami akan menghubungi anda segera!",
         variant: "default",
       });
       form.reset();
     },
     onError: (error) => {
       toast({
-        title: "Error",
-        description: error.message || "There was a problem sending your message. Please try again.",
+        title: language === 'en' ? "Error" : "Ralat",
+        description: error.message || (language === 'en' 
+          ? "There was a problem sending your message. Please try again."
+          : "Terdapat masalah menghantar mesej anda. Sila cuba lagi."),
         variant: "destructive",
       });
     }
@@ -322,10 +326,13 @@ const Contact = () => {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message</FormLabel>
+                          <FormLabel>{t('contact.form.message')}</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Describe your automotive needs..." 
+                              placeholder={language === 'en' 
+                                ? "Describe your automotive needs..." 
+                                : "Terangkan keperluan automotif anda..."
+                              } 
                               rows={4}
                               {...field} 
                             />
@@ -342,10 +349,11 @@ const Contact = () => {
                     >
                       {mutation.isPending ? (
                         <>
-                          <i className="fas fa-spinner fa-spin mr-2"></i> Sending...
+                          <i className="fas fa-spinner fa-spin mr-2"></i> 
+                          {language === 'en' ? 'Sending...' : 'Menghantar...'}
                         </>
                       ) : (
-                        "Send Message"
+                        t('contact.form.submit')
                       )}
                     </Button>
                   </form>
@@ -366,7 +374,7 @@ const Contact = () => {
                 ></iframe>
                 <div className="text-center mt-2 text-sm text-gray-500">
                   <a href="https://www.openstreetmap.org/?mlat=3.0468&mlon=101.4464" target="_blank" rel="noopener noreferrer">
-                    View larger map
+                    {language === 'en' ? 'View larger map' : 'Lihat peta lebih besar'}
                   </a>
                 </div>
               </motion.div>

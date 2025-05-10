@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { Link } from "wouter";
 import { galleryItems } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Gallery = () => {
+  const { language, t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<{
     id: number;
     image: string;
@@ -23,9 +25,14 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">Our Work Gallery</h1>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
+              {t('gallery.hero.title')}
+            </h1>
             <p className="text-xl text-white/80 mb-8">
-              Browse through our portfolio of automotive repairs, restorations, and custom work
+              {language === 'en'
+                ? 'Browse through our portfolio of automotive repairs, restorations, and custom work'
+                : 'Lihat portfolio kami untuk pembaikan automotif, pemulihan, dan kerja kustomisasi'
+              }
             </p>
           </motion.div>
         </div>
@@ -89,9 +96,17 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">Specialized Restoration Projects</h2>
+            <h2 className="section-title">
+              {language === 'en' 
+                ? 'Specialized Restoration Projects' 
+                : 'Projek Pemulihan Khusus'
+              }
+            </h2>
             <p className="section-subtitle">
-              Our expert team specializes in bringing vintage vehicles back to life
+              {language === 'en'
+                ? 'Our expert team specializes in bringing vintage vehicles back to life'
+                : 'Pasukan pakar kami khusus dalam menghidupkan semula kenderaan vintaj'
+              }
             </p>
           </motion.div>
 
@@ -108,9 +123,14 @@ const Gallery = () => {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-heading font-semibold mb-2">Classic Car Restoration</h3>
+                <h3 className="text-xl font-heading font-semibold mb-2">
+                  {language === 'en' ? 'Classic Car Restoration' : 'Pemulihan Kereta Klasik'}
+                </h3>
                 <p className="text-gray-600">
-                  We specialize in full and partial restorations of classic vehicles, bringing them back to their original glory or customizing them to your preferences.
+                  {language === 'en'
+                    ? 'We specialize in full and partial restorations of classic vehicles, bringing them back to their original glory or customizing them to your preferences.'
+                    : 'Kami khusus dalam pemulihan penuh dan separa kenderaan klasik, mengembalikannya kepada kegemilangan asal atau menyesuaikannya mengikut pilihan anda.'
+                  }
                 </p>
               </div>
             </motion.div>
