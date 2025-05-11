@@ -150,6 +150,26 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium">{t('contact.address')}</h4>
                       <p className="text-gray-600">{contactInfo.address}</p>
+                      <div className="flex space-x-2 mt-3">
+                        <a 
+                          href="https://www.google.com/maps/dir/?api=1&destination=Bakemono+J+Garage+Workshop+%26+Service%2C+28%2C+JALAN+PENGASAH+4%2C+BATU+3+3%2F4%2C+Jalan+Kapar%2C+Kampung+Rantau+Panjang%2C+42100+Klang%2C+Selangor"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-3 py-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition-colors"
+                        >
+                          <i className="fab fa-google mr-2"></i>
+                          {language === 'en' ? 'Google Maps' : 'Google Maps'}
+                        </a>
+                        <a 
+                          href="https://waze.com/ul?ll=3.0821752,101.4387771&navigate=yes"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-3 py-2 bg-sky-500 text-white text-sm font-medium rounded-md hover:bg-sky-600 transition-colors"
+                        >
+                          <i className="fab fa-waze mr-2"></i>
+                          {language === 'en' ? 'Waze' : 'Waze'}
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -422,14 +442,14 @@ const Contact = () => {
                 <iframe 
                   title="Bakemono J Garage Workshop Location" 
                   className="w-full h-80 border-0"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0909246098!2d101.44384407372055!3d3.0467969540499893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb29c46f47941%3A0x1a88ce0b96d6a626!2sBAKEMONO%20J&#39;GARAGE!5e0!3m2!1sen!2smy!4v1683687271654!5m2!1sen!2smy"
+                  src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d127487.01082731175!2d101.61319863258259!3d3.1815204203075983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x31cc37d12d669c1f%3A0x8cca56352d1f9624!2s3.1814498%2C101.7728970!3m2!1d3.1814498!2d101.772897!4m5!1s0x31cdb4e38bc465e5%3A0x8cf4d40469cf38a8!2sBakemono%20J%20Garage%20Workshop%20%26%20Service%2C%2028%2C%20JALAN%20PENGASAH%204%2C%20BATU%203%203%2F4%2C%20Jalan%20Kapar%2C%20Kampung%20Rantau%20Panjang%2C%2042100%20Klang%2C%20Selangor!3m2!1d3.0821752999999997!2d101.4387771!5e0!3m2!1sen!2smy!4v1684226471408!5m2!1sen!2smy"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
                 ></iframe>
                 <div className="text-center mt-2 text-sm text-gray-500">
-                  <a href="https://goo.gl/maps/xm9Y6qEUjk7SYm9T8" target="_blank" rel="noopener noreferrer">
-                    {language === 'en' ? 'View on Google Maps' : 'Lihat di Google Maps'}
+                  <a href="https://www.google.com/maps/dir/3.1814498,101.7728970/Bakemono+J+Garage+Workshop+%26+Service,+28,+JALAN+PENGASAH+4,+BATU+3+3%2F4,+Jalan+Kapar,+Kampung+Rantau+Panjang,+42100+Klang,+Selangor/@3.1314778,101.4387771,11z/" target="_blank" rel="noopener noreferrer">
+                    {language === 'en' ? 'View directions on Google Maps' : 'Lihat arah di Google Maps'}
                   </a>
                 </div>
               </motion.div>
