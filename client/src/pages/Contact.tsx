@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { contactInfo, serviceOptions } from "@/lib/constants";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 
 // Define the form schema
 const contactFormSchema = z.object({
@@ -126,6 +127,7 @@ const Contact = () => {
                     className="bg-white text-green-600 hover:bg-gray-100 font-medium py-2 px-4 rounded-md transition duration-200 flex items-center w-full sm:w-auto justify-center"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent('whatsapp_click', 'engagement', 'contact_chat_now')}
                   >
                     <i className="fab fa-whatsapp mr-2"></i>
                     <span>{language === 'en' ? 'Chat Now: 017-295 2514' : 'Sembang Sekarang: 017-295 2514'}</span>
@@ -236,6 +238,7 @@ const Contact = () => {
                       aria-label="WhatsApp"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackEvent('whatsapp_click', 'engagement', 'contact_social_icon')}
                     >
                       <i className="fab fa-whatsapp"></i>
                     </a>

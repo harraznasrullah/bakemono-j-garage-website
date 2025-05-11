@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { features, services, testimonials, galleryItems, contactInfo } from "@/lib/constants";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 
 const Home = () => {
   // Get language context
@@ -57,6 +58,7 @@ const Home = () => {
                   className="btn-accent inline-flex items-center justify-center text-sm sm:text-base py-2 px-3 sm:py-3 sm:px-4"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('whatsapp_click', 'engagement', 'home_book_appointment')}
                 >
                   <i className="fab fa-whatsapp mr-2 text-lg"></i> 
                   <span className="whitespace-nowrap">
