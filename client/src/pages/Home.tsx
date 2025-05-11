@@ -161,21 +161,21 @@ const Home = () => {
       </section>
 
       {/* Recognition Banner */}
-      <section className="py-12 bg-primary">
+      <section className="py-8 md:py-12 bg-primary">
         <div className="container text-center">
           <motion.div 
-            className="bg-white/10 rounded-lg py-8 px-4 md:px-8 inline-block"
+            className="bg-white/10 rounded-lg py-6 md:py-8 px-3 md:px-8 inline-block w-full md:w-auto max-w-full"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-white text-xl md:text-2xl font-heading font-bold mb-2">
+            <h3 className="text-white text-lg sm:text-xl md:text-2xl font-heading font-bold mb-2 px-2">
               {language === 'en'
                 ? 'TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020'
                 : 'ANTARA 10 MEKANIK PALING DIIKTIRAF DI MALAYSIA 2020'
               }
             </h3>
-            <p className="text-white/80 text-lg">
+            <p className="text-white/80 text-base md:text-lg">
               {language === 'en'
                 ? 'Trust your vehicle with award-winning expertise'
                 : 'Percayakan kenderaan anda dengan kepakaran bertaraf cemerlang'
