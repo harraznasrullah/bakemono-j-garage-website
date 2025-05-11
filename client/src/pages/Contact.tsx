@@ -442,7 +442,7 @@ const Contact = () => {
                 <iframe 
                   title="Bakemono J Garage Workshop Location" 
                   className="w-full h-80 border-0"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.658867342675!2d101.43619837441194!3d3.0821802534359553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb4e38bc465e5%3A0x8cf4d40469cf38a8!2sBakemono%20J%20Garage%20Workshop%20%26%20Service!5e0!3m2!1sen!2smy!4v1684226471408!5m2!1sen!2smy"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.6647262989288!2d101.43850365919141!3d3.0821753142004826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb4e38bc465e5%3A0x8cf4d40469cf38a8!2sBakemono%20J%20Garage%20Workshop%20%26%20Service!5e0!3m2!1sen!2smy!4v1684226471408!5m2!1sen!2smy"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
