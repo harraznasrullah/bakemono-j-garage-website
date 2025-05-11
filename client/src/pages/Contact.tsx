@@ -161,7 +161,7 @@ const Contact = () => {
                           {language === 'en' ? 'Google Maps' : 'Google Maps'}
                         </a>
                         <a 
-                          href="https://waze.com/ul?ll=3.0821752,101.4387771&navigate=yes"
+                          href="https://waze.com/ul?ll=3.0733165,101.4106939&navigate=yes"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center px-3 py-2 bg-sky-500 text-white text-sm font-medium rounded-md hover:bg-sky-600 transition-colors"
@@ -442,13 +442,13 @@ const Contact = () => {
                 <iframe 
                   title="Bakemono J Garage Workshop Location" 
                   className="w-full h-80 border-0"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.6647262989288!2d101.43850365919141!3d3.0821753142004826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb4e38bc465e5%3A0x8cf4d40469cf38a8!2sBakemono%20J%20Garage%20Workshop%20%26%20Service!5e0!3m2!1sen!2smy!4v1684226471408!5m2!1sen!2smy"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0799535803208!2d101.4106939105733!3d3.0733164968894706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc549127fea2af%3A0xea94958e3bcbfbca!2sBakemono%20J%20Garage%20Workshop%20%26%20Service!5e0!3m2!1sen!2smy!4v1746942287763!5m2!1sen!2smy"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
                 ></iframe>
                 <div className="text-center mt-2 text-sm text-gray-500">
-                  <a href="https://www.google.com/maps/place/Bakemono+J+Garage+Workshop+%26+Service/@3.0821753,101.4387771,17z/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.google.com/maps/place/Bakemono+J+Garage+Workshop+%26+Service/@3.0733165,101.4106939,17z/" target="_blank" rel="noopener noreferrer">
                     {language === 'en' ? 'View on Google Maps' : 'Lihat di Google Maps'}
                   </a>
                 </div>

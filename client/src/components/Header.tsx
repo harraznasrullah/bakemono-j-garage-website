@@ -49,9 +49,11 @@ const Header = () => {
               href="/"
               onClick={() => window.scrollTo(0, 0)}
             >
-              <h1 className="text-2xl md:text-3xl font-heading font-bold text-primary cursor-pointer">
-                <span className="text-accent">BAKEMONO</span> J'GARAGE
-              </h1>
+              <img 
+                src="/images/logo.jpg" 
+                alt="Bakemono J Garage Logo" 
+                className="h-12 md:h-14 cursor-pointer"
+              />
             </Link>
           </div>
           
