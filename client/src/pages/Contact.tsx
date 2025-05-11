@@ -422,12 +422,14 @@ const Contact = () => {
                 <iframe 
                   title="Bakemono J Garage Workshop Location" 
                   className="w-full h-80 border-0"
-                  src={`https://www.openstreetmap.org/export/embed.html?bbox=101.4414%2C3.0418%2C101.4514%2C3.0518&layer=mapnik&marker=3.0468%2C101.4464`}
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0909246098!2d101.44384407372055!3d3.0467969540499893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb29c46f47941%3A0x1a88ce0b96d6a626!2sBAKEMONO%20J&#39;GARAGE!5e0!3m2!1sen!2smy!4v1683687271654!5m2!1sen!2smy"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
                 ></iframe>
                 <div className="text-center mt-2 text-sm text-gray-500">
-                  <a href="https://www.openstreetmap.org/?mlat=3.0468&mlon=101.4464" target="_blank" rel="noopener noreferrer">
-                    {language === 'en' ? 'View larger map' : 'Lihat peta lebih besar'}
+                  <a href="https://goo.gl/maps/xm9Y6qEUjk7SYm9T8" target="_blank" rel="noopener noreferrer">
+                    {language === 'en' ? 'View on Google Maps' : 'Lihat di Google Maps'}
                   </a>
                 </div>
               </motion.div>
