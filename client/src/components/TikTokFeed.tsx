@@ -37,6 +37,20 @@ const TikTokFeed = ({ className = '' }: TikTokFeedProps) => {
         }
         const jsonData = await response.json();
         setData(jsonData);
+        
+        // Load TikTok script if there are any videos with embed_code
+        if (jsonData && jsonData.videos && jsonData.videos.some((video: TikTokVideo) => video.embed_code)) {
+          setTimeout(() => {
+            const existingScript = document.getElementById('tiktok-embed-script');
+            if (!existingScript) {
+              const script = document.createElement('script');
+              script.id = 'tiktok-embed-script';
+              script.src = 'https://www.tiktok.com/embed.js';
+              script.async = true;
+              document.body.appendChild(script);
+            }
+          }, 100); // Small delay to ensure the DOM is ready
+        }
       } catch (err) {
         console.error('Error fetching TikTok data:', err);
         setError(language === 'en' 
@@ -82,21 +96,6 @@ const TikTokFeed = ({ className = '' }: TikTokFeedProps) => {
     );
   }
 
-  // Import TikTok's embed script if needed
-  useEffect(() => {
-    // Only load if we have embed_code in any videos
-    if (data && data.videos.some(video => video.embed_code)) {
-      const existingScript = document.getElementById('tiktok-embed-script');
-      if (!existingScript) {
-        const script = document.createElement('script');
-        script.id = 'tiktok-embed-script';
-        script.src = 'https://www.tiktok.com/embed.js';
-        script.async = true;
-        document.body.appendChild(script);
-      }
-    }
-  }, [data]);
-
   return (
     <div className={`${className}`}>
       <div className="grid grid-cols-1 gap-6">
@@ -110,7 +109,7 @@ const TikTokFeed = ({ className = '' }: TikTokFeedProps) => {
             {/* Use the embed code if available, otherwise use our custom thumbnail */}
             {video.embed_code ? (
               <div 
-                className="tiktok-container w-full min-h-[500px]" 
+                className="tiktok-container w-full min-h-[600px] p-2" 
                 dangerouslySetInnerHTML={{ __html: video.embed_code }}
               />
             ) : (
