@@ -10,11 +10,18 @@ import Contact from "@/pages/Contact";
 import SocialFeed from "@/pages/SocialFeed";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import Analytics from "@/pages/Analytics";
 import OilChange from "@/pages/services/OilChange";
 import Layout from "@/components/Layout";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { useEffect } from "react";
+import { initGA } from "./lib/analytics";
+import { useAnalytics } from "./hooks/use-analytics";
 
 function Router() {
+  // Track page views when routes change
+  useAnalytics();
+  
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -32,6 +39,16 @@ function Router() {
 }
 
 function App() {
+  // Initialize Google Analytics when app loads
+  useEffect(() => {
+    // Verify required environment variable is present
+    if (!import.meta.env.VITE_GA_MEASUREMENT_ID) {
+      console.warn('Missing required Google Analytics key: VITE_GA_MEASUREMENT_ID');
+    } else {
+      initGA();
+    }
+  }, []);
+
   return (
     <LanguageProvider>
       <TooltipProvider>
