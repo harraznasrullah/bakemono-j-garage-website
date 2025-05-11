@@ -74,14 +74,17 @@ const Header = () => {
             <LanguageSwitcher className="ml-2" />
           </nav>
 
-          {/* Mobile Navigation Toggle */}
-          <button 
-            onClick={toggleMobileMenu} 
-            className="md:hidden text-neutral-dark focus:outline-none"
-            aria-label="Toggle mobile menu"
-          >
-            <i className="fas fa-bars text-2xl"></i>
-          </button>
+          {/* Mobile Language Switcher and Navigation Toggle */}
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSwitcher className="mr-1" />
+            <button 
+              onClick={toggleMobileMenu} 
+              className="text-neutral-dark focus:outline-none"
+              aria-label="Toggle mobile menu"
+            >
+              <i className="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
         </div>
         
         {/* Mobile Menu (Hidden by default) */}
@@ -102,9 +105,6 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 mt-2 border-t border-gray-200 px-2">
-                <LanguageSwitcher />
-              </div>
             </div>
           </div>
         )}
