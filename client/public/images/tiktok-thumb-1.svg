@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#111111"/>
+  <g fill="#ffffff">
+    <path d="M300,400 C280,390 265,375 265,350 C265,320 290,295 320,295 C350,295 375,320 375,350 C375,375 360,390 340,400 L340,335 C340,320 325,310 320,310 C310,310 295,320 295,335 L295,400 L300,400 Z" fill="#ee1d52"/>
+    <path d="M325,465 C340,450 340,430 340,400 L310,400 C310,430 310,450 295,465 C285,475 270,480 255,475 C235,470 220,455 215,435 C210,420 210,405 220,390 L195,370 C175,400 180,435 190,465 C200,490 225,510 255,515 C285,520 310,495 325,465 Z" fill="#69c9d0"/>
+    <path d="M215,435 C220,455 235,470 255,475 C270,480 285,475 295,465 C310,450 310,430 310,400 L310,295 C305,295 295,295 285,300 L285,390 C285,415 255,430 235,410 C225,400 225,385 235,375 L215,355 C205,370 205,395 215,435 Z" fill="#ffffff"/>
+  </g>
+  <text x="300" y="570" font-family="Arial, sans-serif" font-size="28" fill="#ffffff" text-anchor="middle">BAKEMONO J GARAGE</text>
+  <text x="300" y="610" font-family="Arial, sans-serif" font-size="24" fill="#69c9d0" text-anchor="middle">Repair • Maintenance • Custom</text>
+  <text x="300" y="690" font-family="Arial, sans-serif" font-size="26" fill="#ee1d52" text-anchor="middle" font-weight="bold">CLICK TO WATCH VIDEO</text>
+</svg>
