@@ -117,6 +117,7 @@ const msTranslations: Record<string, string> = {
   'nav.about': 'Tentang Kami',
   'nav.social': 'Media Sosial',
   'nav.contact': 'Hubungi',
+  'nav.analytics': 'Analitik',
   
   // Home page
   'home.hero.title': 'Bengkel Automotif Terpercaya di Klang',
