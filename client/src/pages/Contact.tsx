@@ -242,26 +242,6 @@ const Contact = () => {
                   </div>
                 </div>
               </motion.div>
-
-              <motion.div 
-                className="bg-primary text-white rounded-lg shadow-md p-6"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
-                <h3 className="text-xl font-heading font-semibold mb-4">{t('contact.hours')}</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <i className="far fa-clock mt-1 mr-3 text-accent"></i>
-                    <span className="flex-1">{contactInfo.hours.hq}</span>
-                  </li>
-
-                  <li className="flex items-start">
-                    <i className="fas fa-calendar-times mt-1 mr-3 text-accent"></i>
-                    <span className="flex-1">{language === 'en' ? contactInfo.hours.closed : 'Tutup pada Jumaat'}</span>
-                  </li>
-                </ul>
-              </motion.div>
               
               {/* Service Area Section - SEO Enhancement */}
               <motion.div 
