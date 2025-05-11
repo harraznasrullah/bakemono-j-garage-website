@@ -31,7 +31,7 @@ const Home = () => {
               animate="visible"
               variants={fadeIn}
             >
-              <div className="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-medium mb-4 relative z-10">
+              <div className="inline-block bg-accent text-white px-3 py-1 md:px-4 md:py-1 rounded-full text-xs md:text-sm font-medium mb-4 relative z-10 text-center max-w-[90%] md:max-w-none overflow-hidden text-ellipsis whitespace-nowrap">
                 {language === 'en' 
                   ? 'TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020'
                   : 'MEKANIK TERATAS 10 PALING DIIKTIRAF DI MALAYSIA 2020'
@@ -49,17 +49,18 @@ const Home = () => {
                   : 'Kualiti dan fungsi dijamin. Kami mengkhususkan diri dalam pembaikan umum, pemulihan kereta vintage, dan perkhidmatan penyelenggaraan komprehensif.'
                 }
               </p>
-              <div className="flex flex-col md:flex-row w-full md:w-auto gap-4 md:gap-0 md:space-x-4">
+              <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-0 sm:space-x-4">
                 <a 
                   href={contactInfo.social.whatsapp} 
-                  className="btn-accent inline-flex items-center justify-center"
+                  className="btn-accent inline-flex items-center justify-center text-sm sm:text-base py-3 px-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-whatsapp mr-2 text-xl"></i> Book Appointment
+                  <i className="fab fa-whatsapp mr-2 text-lg sm:text-xl"></i> 
+                  {language === 'en' ? 'Book Appointment' : 'Tempah Janji Temu'}
                 </a>
-                <Link href="/services" className="btn-secondary inline-flex items-center justify-center">
-                  Our Services
+                <Link href="/services" className="btn-secondary inline-flex items-center justify-center text-sm sm:text-base py-3 px-4">
+                  {language === 'en' ? 'Our Services' : 'Perkhidmatan Kami'}
                 </Link>
               </div>
             </motion.div>
@@ -98,15 +99,15 @@ const Home = () => {
       <section id="services" className="py-16 bg-neutral-light">
         <div className="container">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">
+            <h2 className="section-title text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
               {language === 'en' ? 'Our Services' : 'Perkhidmatan Kami'}
             </h2>
-            <p className="section-subtitle">
+            <p className="section-subtitle text-sm md:text-base px-4 md:px-0">
               {language === 'en'
                 ? 'From routine maintenance to specialized repairs, our experienced team provides comprehensive automotive care for your vehicle.'
                 : 'Dari penyelenggaraan rutin hingga pembaikan khusus, pasukan berpengalaman kami menyediakan penjagaan automotif komprehensif untuk kenderaan anda.'
@@ -188,15 +189,15 @@ const Home = () => {
       <section id="gallery" className="py-16 bg-white">
         <div className="container">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">
+            <h2 className="section-title text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
               {language === 'en' ? 'Our Work Gallery' : 'Galeri Kerja Kami'}
             </h2>
-            <p className="section-subtitle">
+            <p className="section-subtitle text-sm md:text-base px-4 md:px-0">
               {language === 'en'
                 ? 'Browse through our recent automotive repair projects and restoration work.'
                 : 'Lihat projek pembaikan automotif dan kerja pemulihan terkini kami.'
