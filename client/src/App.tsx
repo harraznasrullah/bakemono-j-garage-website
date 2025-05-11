@@ -40,13 +40,13 @@ function Router() {
 }
 
 function App() {
-  // Initialize Google Analytics when app loads
+  // Google Analytics is initialized via the script tag in index.html
+  // This effect will only initialize custom event tracking
   useEffect(() => {
-    // Verify required environment variable is present
+    // No need to initialize GA with initGA() as it's done in index.html
+    // We only need to verify that the measurement ID is present for tracking events
     if (!import.meta.env.VITE_GA_MEASUREMENT_ID) {
       console.warn('Missing required Google Analytics key: VITE_GA_MEASUREMENT_ID');
-    } else {
-      initGA();
     }
   }, []);
 
