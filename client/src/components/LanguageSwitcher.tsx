@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { FlagIcon } from 'react-flag-kit';
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -19,7 +20,11 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) =
       aria-label={language === 'en' ? 'Switch to Malay' : 'Switch to English'}
     >
       <span className="flex items-center">
-        <i className="fas fa-globe mr-1.5"></i>
+        <FlagIcon 
+          code={language === 'en' ? 'GB' : 'MY'} 
+          size={16} 
+          className="mr-1.5" 
+        />
         <span>{language === 'en' ? 'EN' : 'MY'}</span>
         <i className="fas fa-chevron-down text-xs ml-1"></i>
       </span>
