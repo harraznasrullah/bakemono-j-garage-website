@@ -26,7 +26,7 @@ const Home = () => {
           ></div>
           <div className="container h-full flex items-center relative z-10">
             <motion.div 
-              className="w-full max-w-xs sm:max-w-md md:max-w-2xl text-white px-1 sm:px-0"
+              className="w-full md:max-w-2xl text-white px-4 sm:px-6 md:px-0"
               initial="hidden"
               animate="visible"
               variants={fadeIn}
@@ -51,7 +51,7 @@ const Home = () => {
                   : 'Kualiti dan fungsi dijamin. Kami mengkhususkan diri dalam pembaikan umum, pemulihan kereta vintage, dan perkhidmatan penyelenggaraan komprehensif.'
                 }
               </p>
-              <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-0 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a 
                   href={contactInfo.social.whatsapp} 
                   className="btn-accent inline-flex items-center justify-center text-sm sm:text-base py-2 px-3 sm:py-3 sm:px-4"
