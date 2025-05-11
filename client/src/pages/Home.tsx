@@ -32,11 +32,11 @@ const Home = () => {
               animate="visible"
               variants={fadeIn}
             >
-              <div className="inline-block bg-accent text-white px-2 py-1 md:px-4 md:py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium mb-3 md:mb-4 relative z-10 text-center">
+              <div className="inline-block bg-accent text-white px-3 py-1 md:px-4 md:py-1 rounded-full font-medium mb-3 md:mb-4 relative z-10 text-center">
                 <span className="truncate-banner">
                   {language === 'en' 
-                    ? 'TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020'
-                    : 'MEKANIK TERATAS 10 PALING DIIKTIRAF DI MALAYSIA 2020'
+                    ? 'TOP 10 RECOGNISED MECHANICS IN MALAYSIA 2020'
+                    : 'MEKANIK TERATAS 10 DI MALAYSIA 2020'
                   }
                 </span>
               </div>

@@ -162,7 +162,7 @@
   
   /* Fix for TOP 10 banner on smallest screens */
   .truncate-banner {
-    @apply block truncate max-w-[200px] xs:max-w-[230px] sm:max-w-full;
+    @apply block text-[9px] xs:text-[10px] sm:text-xs md:text-sm max-w-[280px] xs:max-w-[300px] sm:max-w-full;
   }
   
   /* Grid layouts */
