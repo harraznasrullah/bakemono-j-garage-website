@@ -20,7 +20,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) =
     >
       <span className="flex items-center">
         <i className="fas fa-globe mr-1.5"></i>
-        <span>{language === 'en' ? 'EN' : 'MS'}</span>
+        <span>{language === 'en' ? 'EN' : 'MY'}</span>
         <i className="fas fa-chevron-down text-xs ml-1"></i>
       </span>
     </button>
