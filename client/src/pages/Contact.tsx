@@ -442,14 +442,14 @@ const Contact = () => {
                 <iframe 
                   title="Bakemono J Garage Workshop Location" 
                   className="w-full h-80 border-0"
-                  src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d127487.01082731175!2d101.61319863258259!3d3.1815204203075983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x31cc37d12d669c1f%3A0x8cca56352d1f9624!2s3.1814498%2C101.7728970!3m2!1d3.1814498!2d101.772897!4m5!1s0x31cdb4e38bc465e5%3A0x8cf4d40469cf38a8!2sBakemono%20J%20Garage%20Workshop%20%26%20Service%2C%2028%2C%20JALAN%20PENGASAH%204%2C%20BATU%203%203%2F4%2C%20Jalan%20Kapar%2C%20Kampung%20Rantau%20Panjang%2C%2042100%20Klang%2C%20Selangor!3m2!1d3.0821752999999997!2d101.4387771!5e0!3m2!1sen!2smy!4v1684226471408!5m2!1sen!2smy"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.658867342675!2d101.43619837441194!3d3.0821802534359553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb4e38bc465e5%3A0x8cf4d40469cf38a8!2sBakemono%20J%20Garage%20Workshop%20%26%20Service!5e0!3m2!1sen!2smy!4v1684226471408!5m2!1sen!2smy"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
                 ></iframe>
                 <div className="text-center mt-2 text-sm text-gray-500">
-                  <a href="https://www.google.com/maps/dir/3.1814498,101.7728970/Bakemono+J+Garage+Workshop+%26+Service,+28,+JALAN+PENGASAH+4,+BATU+3+3%2F4,+Jalan+Kapar,+Kampung+Rantau+Panjang,+42100+Klang,+Selangor/@3.1314778,101.4387771,11z/" target="_blank" rel="noopener noreferrer">
-                    {language === 'en' ? 'View directions on Google Maps' : 'Lihat arah di Google Maps'}
+                  <a href="https://www.google.com/maps/place/Bakemono+J+Garage+Workshop+%26+Service/@3.0821753,101.4387771,17z/" target="_blank" rel="noopener noreferrer">
+                    {language === 'en' ? 'View on Google Maps' : 'Lihat di Google Maps'}
                   </a>
                 </div>
               </motion.div>
