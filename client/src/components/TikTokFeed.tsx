@@ -8,6 +8,7 @@ interface TikTokVideo {
   thumbnail: string;
   description: string;
   date: string;
+  embed_code?: string;
 }
 
 interface TikTokData {
@@ -81,6 +82,21 @@ const TikTokFeed = ({ className = '' }: TikTokFeedProps) => {
     );
   }
 
+  // Import TikTok's embed script if needed
+  useEffect(() => {
+    // Only load if we have embed_code in any videos
+    if (data && data.videos.some(video => video.embed_code)) {
+      const existingScript = document.getElementById('tiktok-embed-script');
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.id = 'tiktok-embed-script';
+        script.src = 'https://www.tiktok.com/embed.js';
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    }
+  }, [data]);
+
   return (
     <div className={`${className}`}>
       <div className="grid grid-cols-1 gap-6">
@@ -90,21 +106,30 @@ const TikTokFeed = ({ className = '' }: TikTokFeedProps) => {
               <h4 className="font-medium truncate">{video.description}</h4>
               <p className="text-sm text-gray-500">{video.date}</p>
             </div>
-            <div className="relative aspect-[9/16] bg-black flex flex-col items-center justify-center overflow-hidden">
-              {/* Using our custom thumbnails */}
-              <a 
-                href={video.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full h-full"
-              >
-                <img 
-                  src={`/images/tiktok-thumb-${data.videos.indexOf(video) % 2 + 1}.svg`} 
-                  alt={`TikTok video: ${video.description}`} 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-            </div>
+            
+            {/* Use the embed code if available, otherwise use our custom thumbnail */}
+            {video.embed_code ? (
+              <div 
+                className="tiktok-container w-full min-h-[500px]" 
+                dangerouslySetInnerHTML={{ __html: video.embed_code }}
+              />
+            ) : (
+              <div className="relative aspect-[9/16] bg-black flex flex-col items-center justify-center overflow-hidden">
+                <a 
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full"
+                >
+                  <img 
+                    src={`/images/tiktok-thumb-${data.videos.indexOf(video) % 2 + 1}.svg`} 
+                    alt={`TikTok video: ${video.description}`} 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </a>
+              </div>
+            )}
+
             <div className="p-4 flex justify-between items-center">
               <a 
                 href={video.url}
