@@ -189,6 +189,13 @@ export default function Analytics() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">{text.pageTitle}</h1>
           <p className="text-muted-foreground">{text.pageDescription}</p>
+          <div className="mt-2 bg-amber-50 border border-amber-200 text-amber-800 px-4 py-2 rounded-md">
+            <p className="text-sm font-medium">
+              {language === 'en' 
+                ? 'Note: Currently showing placeholder data. Real data will appear as visitors interact with your site.'
+                : 'Nota: Kini menunjukkan data contoh. Data sebenar akan muncul apabila pelawat berinteraksi dengan laman web anda.'}
+            </p>
+          </div>
         </div>
 
         <Tabs defaultValue="overview" className="w-full">
@@ -473,6 +480,18 @@ export default function Analytics() {
             <li>{text.instructionTwo}</li>
             <li>{text.instructionThree}</li>
           </ul>
+          <div className="mt-4 p-3 bg-gray-50 rounded-md">
+            <p className="text-sm text-gray-700 mb-2 font-medium">
+              {language === 'en'
+                ? 'Current Status: Using placeholder data for demonstration purposes'
+                : 'Status Semasa: Menggunakan data contoh untuk tujuan demonstrasi'}
+            </p>
+            <p className="text-sm text-gray-600">
+              {language === 'en'
+                ? 'Real data collection has begun, but it may take 24-48 hours for Google Analytics to start showing actual statistics.'
+                : 'Pengumpulan data sebenar telah bermula, tetapi ia mungkin mengambil masa 24-48 jam untuk Google Analytics mula menunjukkan statistik sebenar.'}
+            </p>
+          </div>
           <div className="mt-6">
             <a 
               href="https://analytics.google.com/" 
