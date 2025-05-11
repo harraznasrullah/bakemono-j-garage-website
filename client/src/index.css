@@ -156,6 +156,11 @@
     @apply fixed inset-0 z-50 bg-white p-4 flex flex-col overflow-y-auto;
   }
   
+  /* Fix for TOP 10 banner on smallest screens */
+  .truncate-banner {
+    @apply block truncate max-w-[230px] sm:max-w-full;
+  }
+  
   /* Grid layouts */
   .responsive-grid-2 {
     @apply grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6;

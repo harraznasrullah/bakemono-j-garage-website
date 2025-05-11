@@ -18,7 +18,7 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <section id="home" className="relative">
-        <div className="relative h-[60vh] bg-black">
+        <div className="relative h-[70vh] sm:h-[60vh] bg-black">
           <div className="absolute inset-0 hero-gradient z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center" 
@@ -26,24 +26,26 @@ const Home = () => {
           ></div>
           <div className="container h-full flex items-center relative z-10">
             <motion.div 
-              className="max-w-2xl text-white"
+              className="w-full max-w-xs sm:max-w-md md:max-w-2xl text-white px-1 sm:px-0"
               initial="hidden"
               animate="visible"
               variants={fadeIn}
             >
-              <div className="inline-block bg-accent text-white px-3 py-1 md:px-4 md:py-1 rounded-full text-xs md:text-sm font-medium mb-4 relative z-10 text-center max-w-[90%] md:max-w-none overflow-hidden text-ellipsis whitespace-nowrap">
-                {language === 'en' 
-                  ? 'TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020'
-                  : 'MEKANIK TERATAS 10 PALING DIIKTIRAF DI MALAYSIA 2020'
-                }
+              <div className="inline-block bg-accent text-white px-2 py-1 md:px-4 md:py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium mb-3 md:mb-4 relative z-10 text-center">
+                <span className="truncate-banner">
+                  {language === 'en' 
+                    ? 'TOP 10 MOST RECOGNISED MECHANICS IN MALAYSIA 2020'
+                    : 'MEKANIK TERATAS 10 PALING DIIKTIRAF DI MALAYSIA 2020'
+                  }
+                </span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-heading font-bold mb-3 md:mb-4 leading-tight">
                 {language === 'en'
                   ? 'Expert Auto Repair & Maintenance Services'
                   : 'Servis Pembaikan & Penyelenggaraan Auto Pakar'
                 }
               </h2>
-              <p className="text-base md:text-lg mb-8 text-gray-100">
+              <p className="text-sm sm:text-base md:text-lg mb-6 md:mb-8 text-gray-100">
                 {language === 'en'
                   ? 'Quality and functionality guaranteed. We specialize in general repairs, vintage car restoration, and comprehensive maintenance services.'
                   : 'Kualiti dan fungsi dijamin. Kami mengkhususkan diri dalam pembaikan umum, pemulihan kereta vintage, dan perkhidmatan penyelenggaraan komprehensif.'
@@ -52,15 +54,22 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-0 sm:space-x-4">
                 <a 
                   href={contactInfo.social.whatsapp} 
-                  className="btn-accent inline-flex items-center justify-center text-sm sm:text-base py-3 px-4"
+                  className="btn-accent inline-flex items-center justify-center text-sm sm:text-base py-2 px-3 sm:py-3 sm:px-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-whatsapp mr-2 text-lg sm:text-xl"></i> 
-                  {language === 'en' ? 'Book Appointment' : 'Tempah Janji Temu'}
+                  <i className="fab fa-whatsapp mr-2 text-lg"></i> 
+                  <span className="whitespace-nowrap">
+                    {language === 'en' ? 'Book Appointment' : 'Tempah Janji Temu'}
+                  </span>
                 </a>
-                <Link href="/services" className="btn-secondary inline-flex items-center justify-center text-sm sm:text-base py-3 px-4">
-                  {language === 'en' ? 'Our Services' : 'Perkhidmatan Kami'}
+                <Link 
+                  href="/services" 
+                  className="btn-secondary inline-flex items-center justify-center text-sm sm:text-base py-2 px-3 sm:py-3 sm:px-4"
+                >
+                  <span className="whitespace-nowrap">
+                    {language === 'en' ? 'Our Services' : 'Perkhidmatan Kami'}
+                  </span>
                 </Link>
               </div>
             </motion.div>
