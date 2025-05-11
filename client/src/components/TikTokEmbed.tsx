@@ -2,10 +2,17 @@ import { useEffect, useRef } from 'react';
 
 interface TikTokEmbedProps {
   username: string;
+  videoId?: string; // Optional video ID for specific videos
   className?: string;
+  embedType?: 'profile' | 'video'; // Type of embed: profile or specific video
 }
 
-export const TikTokEmbed = ({ username, className = '' }: TikTokEmbedProps) => {
+export const TikTokEmbed = ({ 
+  username, 
+  videoId, 
+  className = '',
+  embedType = 'profile'
+}: TikTokEmbedProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,7 +27,14 @@ export const TikTokEmbed = ({ username, className = '' }: TikTokEmbedProps) => {
     script.id = 'tiktok-embed-script';
     script.src = 'https://www.tiktok.com/embed.js';
     script.async = true;
+    
+    // This is important: The script needs to be loaded after the blockquote element is in the DOM
     document.body.appendChild(script);
+
+    // Force reload the TikTok embed widget
+    if (window.TikTokObject) {
+      window.TikTokObject = undefined;
+    }
 
     // Clean up on unmount
     return () => {
@@ -28,23 +42,37 @@ export const TikTokEmbed = ({ username, className = '' }: TikTokEmbedProps) => {
         document.getElementById('tiktok-embed-script')?.remove();
       }
     };
-  }, [username]);
+  }, [username, videoId, embedType]);
+
+  // Determine the citation URL based on embed type
+  const citeUrl = embedType === 'video' && videoId 
+    ? `https://www.tiktok.com/@${username}/video/${videoId}`
+    : `https://www.tiktok.com/@${username}`;
 
   return (
     <div ref={containerRef} className={className}>
       <blockquote 
         className="tiktok-embed" 
-        cite={`https://www.tiktok.com/@${username}`}
-        data-unique-id={username}
+        cite={citeUrl}
+        data-unique-id={videoId || username}
+        data-embed-type={embedType}
+        data-embed-id={embedType === 'video' ? videoId : username}
       >
         <section>
-          <a href={`https://www.tiktok.com/@${username}`} target="_blank" rel="noopener noreferrer">
-            @{username}
+          <a href={citeUrl} target="_blank" rel="noopener noreferrer">
+            {embedType === 'video' ? 'View TikTok' : `@${username}`}
           </a>
         </section>
       </blockquote>
     </div>
   );
 };
+
+// Add this to make TypeScript happy with the TikTokObject property
+declare global {
+  interface Window {
+    TikTokObject: any;
+  }
+}
 
 export default TikTokEmbed;

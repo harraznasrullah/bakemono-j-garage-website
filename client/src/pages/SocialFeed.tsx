@@ -153,11 +153,41 @@ const SocialFeed = () => {
                 </h3>
               </div>
               <div className="h-[700px] overflow-auto p-4 bg-white">
-                <div className="flex flex-col items-center">
-                  <TikTokEmbed
-                    username="bakemonojgarage"
-                    className="w-full max-w-[605px] min-w-[325px] mx-auto rounded-lg shadow-md"
-                  />
+                <div className="flex flex-col items-center space-y-6">
+                  {/* Specific TikTok videos */}
+                  <div className="mb-4">
+                    <h4 className="text-lg font-medium mb-2 text-center">
+                      {language === 'en' ? 'Featured Videos' : 'Video Pilihan'}
+                    </h4>
+                    
+                    {/* First featured video */}
+                    <TikTokEmbed 
+                      username="bakemonojgarage"
+                      videoId="7040803546596284678"
+                      embedType="video"
+                      className="w-full max-w-[605px] min-w-[325px] mx-auto mb-4 rounded-lg shadow-md"
+                    />
+                    
+                    {/* Second featured video */}
+                    <TikTokEmbed 
+                      username="bakemonojgarage"
+                      videoId="7275313214711456006"
+                      embedType="video"
+                      className="w-full max-w-[605px] min-w-[325px] mx-auto mb-4 rounded-lg shadow-md"
+                    />
+                  </div>
+                  
+                  {/* Profile embed (as a fallback) */}
+                  <div className="mt-4">
+                    <h4 className="text-lg font-medium mb-2 text-center">
+                      {language === 'en' ? 'Our TikTok Profile' : 'Profil TikTok Kami'}
+                    </h4>
+                    <TikTokEmbed
+                      username="bakemonojgarage"
+                      className="w-full max-w-[605px] min-w-[325px] mx-auto rounded-lg shadow-md"
+                    />
+                  </div>
+                  
                   <p className="text-center text-gray-500 mt-4">
                     {language === 'en' 
                       ? 'For more videos, visit our '
