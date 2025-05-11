@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { useMedia } from "@/hooks/use-mobile";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -9,6 +9,11 @@ const Header = () => {
   const isMobile = useMedia("(max-width: 768px)");
   const [location] = useLocation();
   const { t } = useLanguage();
+  
+  // Scroll to top on page navigation
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -18,6 +23,12 @@ const Header = () => {
     if (mobileMenuOpen) {
       setMobileMenuOpen(false);
     }
+  };
+  
+  // Function to handle both closing menu and scrolling to top
+  const handleNavigate = () => {
+    closeMobileMenu();
+    window.scrollTo(0, 0);
   };
 
   const navLinks = [
@@ -34,7 +45,10 @@ const Header = () => {
       <div className="container">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link href="/">
+            <Link 
+              href="/"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <h1 className="text-2xl md:text-3xl font-heading font-bold text-primary cursor-pointer">
                 <span className="text-accent">BAKEMONO</span> J'GARAGE
               </h1>
@@ -50,6 +64,7 @@ const Header = () => {
                 className={`font-medium transition duration-200 ${
                   location === link.href ? "text-accent" : "hover:text-accent"
                 }`}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 {link.label}
               </Link>
@@ -80,7 +95,7 @@ const Header = () => {
                       ? "text-accent border-l-4 border-accent pl-3" 
                       : "hover:text-accent hover:bg-gray-50"
                   }`}
-                  onClick={closeMobileMenu}
+                  onClick={handleNavigate}
                 >
                   {link.label}
                 </Link>
