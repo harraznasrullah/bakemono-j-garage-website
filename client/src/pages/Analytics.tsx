@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
-  PieChart, Pie, BarChart, Bar, LineChart, Line, XAxis, YAxis, 
+  PieChart, Pie, Cell, BarChart, Bar, LineChart, Line, XAxis, YAxis, 
   CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
 import { Separator } from "@/components/ui/separator";
@@ -52,7 +52,9 @@ const translations = {
     direct: "Direct",
     referral: "Referral",
     organic: "Organic Search",
-    social: "Social Media"
+    social: "Social Media",
+    trafficOverTime: "Traffic Over Time",
+    deviceBreakdown: "Device Breakdown"
   },
   ms: {
     pageTitle: "Papan Pemuka Analitik",
@@ -95,7 +97,9 @@ const translations = {
     direct: "Terus",
     referral: "Rujukan",
     organic: "Carian Organik",
-    social: "Media Sosial"
+    social: "Media Sosial",
+    trafficOverTime: "Trafik Mengikut Masa",
+    deviceBreakdown: "Pecahan Peranti"
   }
 };
 
@@ -196,24 +200,24 @@ export default function Analytics() {
           </TabsList>
 
           <div className="mb-4 flex">
-            <TabsTrigger
-              className={`mr-2 px-4 py-2 ${timeframe === 'day' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
+            <button
+              className={`mr-2 px-4 py-2 rounded ${timeframe === 'day' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
               onClick={() => setTimeframe('day')}
             >
               {text.today}
-            </TabsTrigger>
-            <TabsTrigger
-              className={`mr-2 px-4 py-2 ${timeframe === 'week' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
+            </button>
+            <button
+              className={`mr-2 px-4 py-2 rounded ${timeframe === 'week' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
               onClick={() => setTimeframe('week')}
             >
               {text.thisWeek}
-            </TabsTrigger>
-            <TabsTrigger
-              className={`px-4 py-2 ${timeframe === 'month' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
+            </button>
+            <button
+              className={`px-4 py-2 rounded ${timeframe === 'month' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}
               onClick={() => setTimeframe('month')}
             >
               {text.thisMonth}
-            </TabsTrigger>
+            </button>
           </div>
 
           {isLoading ? (
@@ -312,7 +316,7 @@ export default function Analytics() {
               <TabsContent value="traffic" className="space-y-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{text.trafficOverTime}</CardTitle>
+                    <CardTitle>{text.traffic}</CardTitle>
                   </CardHeader>
                   <CardContent className="h-[400px]">
                     <ResponsiveContainer width="100%" height="100%">
@@ -438,7 +442,7 @@ export default function Analytics() {
 
                   <Card className="col-span-1">
                     <CardHeader>
-                      <CardTitle>{text.deviceBreakdown}</CardTitle>
+                      <CardTitle>{text.devices}</CardTitle>
                     </CardHeader>
                     <CardContent className="h-[300px]">
                       <ResponsiveContainer width="100%" height="100%">

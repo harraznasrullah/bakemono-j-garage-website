@@ -19,6 +19,7 @@ const enTranslations: Record<string, string> = {
   'nav.about': 'About',
   'nav.social': 'Social Media',
   'nav.contact': 'Contact',
+  'nav.analytics': 'Analytics',
   
   // Home page
   'home.hero.title': 'Your Trusted Automotive Workshop in Klang',
