@@ -163,10 +163,11 @@ const Contact = () => {
                           {language === 'en' ? 'Google Maps' : 'Google Maps'}
                         </a>
                         <a 
-                          href="https://waze.com/ul?ll=3.0733165,101.4106939&navigate=yes"
+                          href="https://waze.com/ul?ll=3.0733165,101.4106939&navigate=yes&zoom=17&q=Bakemono%20J%20Garage%20Workshop"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center px-3 py-2 bg-sky-500 text-white text-sm font-medium rounded-md hover:bg-sky-600 transition-colors"
+                          onClick={() => trackEvent('waze_navigation', 'engagement', 'contact_waze_button')}
                         >
                           <i className="fab fa-waze mr-2"></i>
                           {language === 'en' ? 'Waze' : 'Waze'}
