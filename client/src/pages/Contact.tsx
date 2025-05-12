@@ -28,6 +28,8 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
+  // State for map type toggle (Google Maps or Waze)
+  const [mapType, setMapType] = useState<'google' | 'waze'>('google');
   const { language, t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -163,7 +165,7 @@ const Contact = () => {
                           {language === 'en' ? 'Google Maps' : 'Google Maps'}
                         </a>
                         <a 
-                          href="https://waze.com/ul?ll=3.0733165,101.4106939&navigate=yes&zoom=17&q=Bakemono%20J%20Garage%20Workshop"
+                          href="https://waze.com/ul?ll=3.073316,101.413274&navigate=yes&zoom=17&q=Bakemono%20J%20Garage%20Workshop"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center px-3 py-2 bg-sky-500 text-white text-sm font-medium rounded-md hover:bg-sky-600 transition-colors"
@@ -423,17 +425,66 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
-                <iframe 
-                  title="Bakemono J Garage Workshop Location" 
-                  className="w-full h-80 border-0"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0799535803208!2d101.4106939105733!3d3.0733164968894706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc549127fea2af%3A0xea94958e3bcbfbca!2sBakemono%20J%20Garage%20Workshop%20%26%20Service!5e0!3m2!1sen!2smy!4v1746942287763!5m2!1sen!2smy"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                ></iframe>
-                <div className="text-center mt-2 text-sm text-gray-500">
-                  <a href="https://www.google.com/maps/place/Bakemono+J+Garage+Workshop+%26+Service/@3.0733165,101.4106939,17z/" target="_blank" rel="noopener noreferrer">
+                {/* Map Tabs for different map providers */}
+                <div className="bg-white rounded-lg p-2 mb-2">
+                  <div className="flex items-center justify-center mb-2">
+                    <div className="flex border border-gray-200 rounded-md">
+                      <button 
+                        className={`px-4 py-2 text-sm font-medium ${mapType === 'google' ? 'bg-primary text-white' : 'bg-white text-gray-700'} rounded-l-md`}
+                        onClick={() => setMapType('google')}
+                      >
+                        <i className="fab fa-google mr-2"></i> Google Maps
+                      </button>
+                      <button 
+                        className={`px-4 py-2 text-sm font-medium ${mapType === 'waze' ? 'bg-sky-500 text-white' : 'bg-white text-gray-700'} rounded-r-md`}
+                        onClick={() => {
+                          setMapType('waze');
+                          trackEvent('waze_map_view', 'engagement', 'contact_waze_map');
+                        }}
+                      >
+                        <i className="fab fa-waze mr-2"></i> Waze
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Map Display */}
+                {mapType === 'google' ? (
+                  <iframe 
+                    title="Bakemono J Garage Workshop Location - Google Maps" 
+                    className="w-full h-80 border-0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0799535803208!2d101.4106939105733!3d3.0733164968894706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc549127fea2af%3A0xea94958e3bcbfbca!2sBakemono%20J%20Garage%20Workshop%20%26%20Service!5e0!3m2!1sen!2smy!4v1746942287763!5m2!1sen!2smy"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <iframe 
+                    title="Bakemono J Garage Workshop Location - Waze" 
+                    className="w-full h-80 border-0"
+                    src="https://embed.waze.com/iframe?zoom=16&lat=3.073316&lon=101.413274&ct=livemap"
+                    loading="lazy"
+                    allowFullScreen
+                  ></iframe>
+                )}
+
+                {/* Map links */}
+                <div className="text-center mt-2 text-sm text-gray-500 flex items-center justify-center space-x-4">
+                  <a href="https://www.google.com/maps/place/Bakemono+J+Garage+Workshop+%26+Service/@3.0733165,101.4106939,17z/" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="hover:text-primary"
+                  >
                     {language === 'en' ? 'View on Google Maps' : 'Lihat di Google Maps'}
+                  </a>
+                  <span>|</span>
+                  <a href="https://waze.com/ul?ll=3.073316,101.413274&navigate=yes&zoom=17&q=Bakemono%20J%20Garage%20Workshop" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     onClick={() => trackEvent('waze_navigation_link', 'engagement', 'contact_waze_link')}
+                     className="hover:text-sky-500"
+                  >
+                    {language === 'en' ? 'Navigate with Waze' : 'Navigasi dengan Waze'}
                   </a>
                 </div>
               </motion.div>
